@@ -39,6 +39,10 @@ public class Wheel_suspension : MonoBehaviour
     public float force_x;
     public float force_y;
 
+    public Transform wheelMesh;
+
+    public float wheelRotateSpeed=10;
+
     void Start()
     {
         rb = transform.root.GetComponent<Rigidbody>();
@@ -51,6 +55,11 @@ public class Wheel_suspension : MonoBehaviour
     {
         wheelAngle = Mathf.Lerp(wheelAngle, steerAngle, wheelTurnSmoothness * Time.deltaTime);
         transform.localRotation = Quaternion.Euler(transform.up*wheelAngle);
+
+        Debug.DrawRay(transform.position, -transform.up * (maxLength + wheelRadius), Color.green);
+
+        CalculateWheelPos();
+        calculateWheelRotation();
     }
 
 
@@ -75,6 +84,27 @@ public class Wheel_suspension : MonoBehaviour
 
 
             rb.AddForceAtPosition(suspensionForce +(force_x *transform.forward) +(force_y *-transform.right), hit.point);
+
+            
         }
+       
     }
+
+    void CalculateWheelPos()
+    {
+        //wheelMesh.position = transform.position-  new Vector3(0, springLength, 0);
+        Vector3 newWheelPos = transform.position;
+        newWheelPos.y = transform.position.y - springLength;
+        wheelMesh.position = newWheelPos;
+    }
+
+    void calculateWheelRotation()
+    {
+        Vector3 rotation = wheelMesh.rotation.eulerAngles;
+
+        
+        wheelMesh.Rotate(-Mathf.Sign(rb.velocity.z) * rb.velocity.magnitude*wheelRotateSpeed * Time.fixedDeltaTime, 0, 0);
+    }
+
+   
 }
