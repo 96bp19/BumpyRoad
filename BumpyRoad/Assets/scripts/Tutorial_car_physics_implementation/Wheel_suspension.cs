@@ -48,6 +48,7 @@ public class Wheel_suspension : MonoBehaviour
         rb = transform.root.GetComponent<Rigidbody>();
         minLength = restLength - springTravel;
         maxLength = restLength + springTravel;
+        springLength = maxLength;
 
     }
 
@@ -94,8 +95,8 @@ public class Wheel_suspension : MonoBehaviour
     {
         //wheelMesh.position = transform.position-  new Vector3(0, springLength, 0);
         Vector3 newWheelPos = transform.position;
-        newWheelPos.y = transform.position.y - springLength;
-        wheelMesh.position = newWheelPos;
+        // newWheelPos.y = (transform.position.y - springLength);
+        wheelMesh.position = -springLength * transform.up+ transform.position;
     }
 
     void calculateWheelRotation()

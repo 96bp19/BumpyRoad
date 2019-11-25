@@ -153,7 +153,7 @@ MonoBehaviour:
   wheelFrontRight: 0
   wheelRearLeft: 0
   wheelRearRight: 1
-  restLength: 0.5
+  restLength: 0.7
   springTravel: 0.2
   springStiffness: 30000
   damperStiffness: 6000
@@ -226,7 +226,7 @@ MonoBehaviour:
   wheelFrontRight: 0
   wheelRearLeft: 1
   wheelRearRight: 0
-  restLength: 0.5
+  restLength: 0.7
   springTravel: 0.2
   springStiffness: 30000
   damperStiffness: 6000
@@ -549,7 +549,7 @@ MonoBehaviour:
   wheelFrontRight: 0
   wheelRearLeft: 0
   wheelRearRight: 0
-  restLength: 0.5
+  restLength: 0.7
   springTravel: 0.2
   springStiffness: 30000
   damperStiffness: 6000
@@ -745,7 +745,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 106
+  m_Constraints: 98
   m_CollisionDetection: 0
 --- !u!4 &1256546741 stripped
 Transform:
@@ -890,7 +890,7 @@ MonoBehaviour:
   wheelFrontRight: 1
   wheelRearLeft: 0
   wheelRearRight: 0
-  restLength: 0.5
+  restLength: 0.7
   springTravel: 0.2
   springStiffness: 30000
   damperStiffness: 6000
