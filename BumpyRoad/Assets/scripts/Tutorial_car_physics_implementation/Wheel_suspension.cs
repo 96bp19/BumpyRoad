@@ -101,15 +101,24 @@ public class Wheel_suspension : MonoBehaviour
             wheelVelocity_localSpace = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
 
             force_x = currentAppliedForce;
+            float brakeForce_x = movingForce - currentAppliedForce;
+
             force_y = wheelVelocity_localSpace.x * currentAppliedForce;
 
 
 
             rb.AddForceAtPosition(suspensionForce + (force_x * transform.forward) + (force_y * -transform.right), hit.point);
+            if (rb.velocity.z >1 )
+            {
+                rb.AddForceAtPosition(-brakeForce_x*transform.forward,hit.point);
+
+            }
 
 
         }
     }
+
+    
 
     void CalculateWheelPos()
     {

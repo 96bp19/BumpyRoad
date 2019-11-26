@@ -167,7 +167,7 @@ MonoBehaviour:
   wheelRotateSpeed: 40
   movingForce: 10000
   accelerationTime: 2
-  deaccelerationTime: 1
+  deaccelerationTime: 2
 --- !u!4 &140965404
 Transform:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
   wheelRotateSpeed: 40
   movingForce: 10000
   accelerationTime: 2
-  deaccelerationTime: 1
+  deaccelerationTime: 2
 --- !u!1 &524047880
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,13 +579,82 @@ MonoBehaviour:
   wheelRotateSpeed: 40
   movingForce: 10000
   accelerationTime: 2
-  deaccelerationTime: 1
+  deaccelerationTime: 2
 --- !u!4 &1010860874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400020, guid: c5ba2f9267836b74095c5d860af51a34,
     type: 3}
   m_PrefabInstance: {fileID: 2031557673}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1057177282
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_Name
+      value: Mountain_Hill
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 105.37626
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.77891
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb3a42e97e63b66428ff60956f4a40db, type: 3}
 --- !u!4 &1143803316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400034, guid: c5ba2f9267836b74095c5d860af51a34,
@@ -980,7 +1049,7 @@ MonoBehaviour:
   wheelRotateSpeed: 40
   movingForce: 10000
   accelerationTime: 2
-  deaccelerationTime: 1
+  deaccelerationTime: 2
 --- !u!1 &1869546042
 GameObject:
   m_ObjectHideFlags: 0
