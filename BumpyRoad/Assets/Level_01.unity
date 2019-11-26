@@ -155,7 +155,7 @@ MonoBehaviour:
   wheelRearRight: 1
   restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
   wheelRadius: 0.75
   steerAngle: 0
@@ -165,6 +165,9 @@ MonoBehaviour:
   force_y: 0
   wheelMesh: {fileID: 1143803316}
   wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
 --- !u!4 &140965404
 Transform:
   m_ObjectHideFlags: 0
@@ -228,7 +231,7 @@ MonoBehaviour:
   wheelRearRight: 0
   restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
   wheelRadius: 0.75
   steerAngle: 0
@@ -238,6 +241,9 @@ MonoBehaviour:
   force_y: 0
   wheelMesh: {fileID: 685431847}
   wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
 --- !u!1 &524047880
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +436,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: test Road (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -500,6 +511,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
 --- !u!1 &984375728
@@ -551,7 +567,7 @@ MonoBehaviour:
   wheelRearRight: 0
   restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
   wheelRadius: 0.75
   steerAngle: 0
@@ -561,6 +577,9 @@ MonoBehaviour:
   force_y: 0
   wheelMesh: {fileID: 1010860874}
   wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
 --- !u!4 &1010860874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400020, guid: c5ba2f9267836b74095c5d860af51a34,
@@ -584,6 +603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test Road (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
@@ -655,6 +679,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
 --- !u!1 &1251497125
@@ -725,9 +754,9 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256546737}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d49ba8f93f1080d4889c3fbdc6318d40, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.92, y: 1, z: 4.61}
   m_Center: {x: 0, y: 0.74, z: -0.27}
@@ -740,13 +769,13 @@ Rigidbody:
   m_GameObject: {fileID: 1256546737}
   serializedVersion: 2
   m_Mass: 1400
-  m_Drag: 0
+  m_Drag: 0.1
   m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 98
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &1256546741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400040, guid: c5ba2f9267836b74095c5d860af51a34,
@@ -765,9 +794,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf888e1c7732b94da6a602ca8cd6948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 10
-  rotationSmoothness: 2
-  raycastDistance: 100
+  controlledRotatiobSpeed: 0
+  rotationSmoothness: 0.5
+  raycastDistance: 4
+  selfRotationSpeed: 0
+  usePhysicsSimulatedRotation: 0
+  manualSelfRotation: 0.25
+  manualControlledRotation: 0.5
+  groundlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  newGravityMultiplier: 3
+--- !u!136 &1256546743
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256546737}
+  m_Material: {fileID: 13400000, guid: d49ba8f93f1080d4889c3fbdc6318d40, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.74
+  m_Height: 4.47
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.86, z: -0.23}
 --- !u!4 &1435728854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400032, guid: c5ba2f9267836b74095c5d860af51a34,
@@ -785,6 +836,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test Road
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
@@ -856,6 +912,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
 --- !u!1 &1863961417
@@ -907,7 +968,7 @@ MonoBehaviour:
   wheelRearRight: 0
   restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
   wheelRadius: 0.75
   steerAngle: 0
@@ -917,6 +978,9 @@ MonoBehaviour:
   force_y: 0
   wheelMesh: {fileID: 1435728854}
   wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
 --- !u!1 &1869546042
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToFollow: {fileID: 1256546737}
-  followOffset: {x: 4, y: 5.42, z: 0}
+  followOffset: {x: 25, y: 18.96, z: 0}
 --- !u!4 &1869546044
 Transform:
   m_ObjectHideFlags: 0
@@ -974,6 +1038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test Road (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
@@ -1044,6 +1113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
@@ -1143,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: c5ba2f9267836b74095c5d860af51a34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.1
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: c5ba2f9267836b74095c5d860af51a34, type: 3}
       propertyPath: m_LocalPosition.z

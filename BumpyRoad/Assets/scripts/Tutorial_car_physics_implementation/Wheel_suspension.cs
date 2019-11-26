@@ -42,6 +42,16 @@ public class Wheel_suspension : MonoBehaviour
     public Transform wheelMesh;
 
     public float wheelRotateSpeed=10;
+    public float movingForce =15000;
+
+    public float accelerationTime=2;
+    public float deaccelerationTime = 1f;
+    private float currentAppliedForce = 0;
+    private float acceleraterate = 0;
+    private float deacelerateRate = 0;
+
+
+
 
     void Start()
     {
@@ -49,6 +59,10 @@ public class Wheel_suspension : MonoBehaviour
         minLength = restLength - springTravel;
         maxLength = restLength + springTravel;
         springLength = maxLength;
+
+        acceleraterate = (movingForce / accelerationTime) * Time.fixedDeltaTime;
+        deacelerateRate = (movingForce / deaccelerationTime) * Time.fixedDeltaTime;
+
 
     }
 
@@ -66,7 +80,14 @@ public class Wheel_suspension : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Physics.Raycast(transform.position ,-transform.up,out RaycastHit hit,maxLength +wheelRadius))
+        CalculateCurrentAppliedForce();
+        CalculateSuspensionAndMovingForce();
+
+    }
+
+    private void CalculateSuspensionAndMovingForce()
+    {
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxLength + wheelRadius))
         {
             lastLength = springLength;
             springLength = hit.distance - wheelRadius;
@@ -79,16 +100,15 @@ public class Wheel_suspension : MonoBehaviour
 
             wheelVelocity_localSpace = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
 
-            force_x = Input.GetAxis("Vertical") * springForce;
-            force_y = wheelVelocity_localSpace.x * springForce;
+            force_x = currentAppliedForce;
+            force_y = wheelVelocity_localSpace.x * currentAppliedForce;
 
 
 
-            rb.AddForceAtPosition(suspensionForce +(force_x *transform.forward) +(force_y *-transform.right), hit.point);
+            rb.AddForceAtPosition(suspensionForce + (force_x * transform.forward) + (force_y * -transform.right), hit.point);
 
-            
+
         }
-       
     }
 
     void CalculateWheelPos()
@@ -105,6 +125,20 @@ public class Wheel_suspension : MonoBehaviour
 
         
         wheelMesh.Rotate(-Mathf.Sign(rb.velocity.z) * rb.velocity.magnitude*wheelRotateSpeed * Time.fixedDeltaTime, 0, 0);
+    }
+
+    void CalculateCurrentAppliedForce()
+    {
+        if (InputHandler.IsScreenTapped())
+        {
+            currentAppliedForce += acceleraterate;
+            currentAppliedForce = Mathf.Min(currentAppliedForce, movingForce);
+        }
+        else
+        {
+            currentAppliedForce -= deacelerateRate;
+            currentAppliedForce = Mathf.Max(currentAppliedForce, 0);
+        }
     }
 
    

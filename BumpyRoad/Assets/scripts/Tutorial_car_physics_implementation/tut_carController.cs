@@ -18,11 +18,7 @@ public class tut_carController : MonoBehaviour
 
     private float accermanAngleLeft;
     private float accermanAngleRight;
-    void Start()
-    {
-        
-    }
-
+  
    
     void Update()
     {
