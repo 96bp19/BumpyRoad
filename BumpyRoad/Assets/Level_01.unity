@@ -153,18 +153,21 @@ MonoBehaviour:
   wheelFrontRight: 0
   wheelRearLeft: 0
   wheelRearRight: 1
-  restLength: 0.5
+  restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
-  wheelRadius: 0.6
+  wheelRadius: 0.75
   steerAngle: 0
   wheelAngle: 0
   wheelTurnSmoothness: 10
   force_x: 0
   force_y: 0
   wheelMesh: {fileID: 1143803316}
-  wheelRotateSpeed: 30
+  wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
 --- !u!4 &140965404
 Transform:
   m_ObjectHideFlags: 0
@@ -226,18 +229,21 @@ MonoBehaviour:
   wheelFrontRight: 0
   wheelRearLeft: 1
   wheelRearRight: 0
-  restLength: 0.5
+  restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
-  wheelRadius: 0.6
+  wheelRadius: 0.75
   steerAngle: 0
   wheelAngle: 0
   wheelTurnSmoothness: 10
   force_x: 0
   force_y: 0
   wheelMesh: {fileID: 685431847}
-  wheelRotateSpeed: 30
+  wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
 --- !u!1 &524047880
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,11 +418,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742907956}
   m_LocalRotation: {x: -0.17459486, y: 0.68521285, z: -0.17459486, w: -0.68521285}
-  m_LocalPosition: {x: 5.27, y: 2.08, z: 0.38}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.539999, y: 2.9184017, z: 1.3062184}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
-  m_Father: {fileID: 1256546741}
-  m_RootOrder: 9
+  m_Father: {fileID: 1869546044}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 28.59, y: 270, z: 0}
 --- !u!1001 &865759779
 PrefabInstance:
@@ -429,6 +435,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test Road (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
@@ -500,6 +511,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
 --- !u!1 &984375728
@@ -549,18 +565,21 @@ MonoBehaviour:
   wheelFrontRight: 0
   wheelRearLeft: 0
   wheelRearRight: 0
-  restLength: 0.5
+  restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
-  wheelRadius: 0.6
+  wheelRadius: 0.75
   steerAngle: 0
   wheelAngle: 0
   wheelTurnSmoothness: 10
   force_x: 0
   force_y: 0
   wheelMesh: {fileID: 1010860874}
-  wheelRotateSpeed: 30
+  wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
 --- !u!4 &1010860874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400020, guid: c5ba2f9267836b74095c5d860af51a34,
@@ -584,6 +603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test Road (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
@@ -655,6 +679,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
 --- !u!1 &1251497125
@@ -725,9 +754,9 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256546737}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d49ba8f93f1080d4889c3fbdc6318d40, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.92, y: 1, z: 4.61}
   m_Center: {x: 0, y: 0.74, z: -0.27}
@@ -740,19 +769,56 @@ Rigidbody:
   m_GameObject: {fileID: 1256546737}
   serializedVersion: 2
   m_Mass: 1400
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.1
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 106
-  m_CollisionDetection: 0
+  m_Interpolate: 2
+  m_Constraints: 98
+  m_CollisionDetection: 2
 --- !u!4 &1256546741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400040, guid: c5ba2f9267836b74095c5d860af51a34,
     type: 3}
   m_PrefabInstance: {fileID: 2031557673}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1256546742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256546737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf888e1c7732b94da6a602ca8cd6948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlledRotatiobSpeed: 0
+  rotationSmoothness: 0.5
+  raycastDistance: 4
+  selfRotationSpeed: 0
+  usePhysicsSimulatedRotation: 0
+  manualSelfRotation: 0.25
+  manualControlledRotation: 0.5
+  groundlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  newGravityMultiplier: 3
+--- !u!136 &1256546743
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256546737}
+  m_Material: {fileID: 13400000, guid: d49ba8f93f1080d4889c3fbdc6318d40, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.74
+  m_Height: 4.47
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.86, z: -0.23}
 --- !u!4 &1435728854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400032, guid: c5ba2f9267836b74095c5d860af51a34,
@@ -770,6 +836,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test Road
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
@@ -841,6 +912,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
 --- !u!1 &1863961417
@@ -890,18 +966,67 @@ MonoBehaviour:
   wheelFrontRight: 1
   wheelRearLeft: 0
   wheelRearRight: 0
-  restLength: 0.5
+  restLength: 0.8
   springTravel: 0.2
-  springStiffness: 30000
+  springStiffness: 90000
   damperStiffness: 6000
-  wheelRadius: 0.6
+  wheelRadius: 0.75
   steerAngle: 0
   wheelAngle: 0
   wheelTurnSmoothness: 10
   force_x: 0
   force_y: 0
   wheelMesh: {fileID: 1435728854}
-  wheelRotateSpeed: 30
+  wheelRotateSpeed: 40
+  movingForce: 10000
+  accelerationTime: 2
+  deaccelerationTime: 1
+--- !u!1 &1869546042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869546044}
+  - component: {fileID: 1869546043}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1869546043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869546042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8282b4f8c73a5aa40878b378ce3d49c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToFollow: {fileID: 1256546737}
+  followOffset: {x: 25, y: 18.96, z: 0}
+--- !u!4 &1869546044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869546042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.9999995, y: -20.858402, z: -0.5462184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 742907959}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1899568349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -913,6 +1038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test Road (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ebdb2b7923adb554eb62e3138fea5e13,
         type: 3}
@@ -983,6 +1113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860895033569716450, guid: ebdb2b7923adb554eb62e3138fea5e13,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdb2b7923adb554eb62e3138fea5e13, type: 3}
@@ -1082,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: c5ba2f9267836b74095c5d860af51a34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.1
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: c5ba2f9267836b74095c5d860af51a34, type: 3}
       propertyPath: m_LocalPosition.z
