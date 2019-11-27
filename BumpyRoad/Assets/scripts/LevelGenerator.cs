@@ -64,7 +64,7 @@ public class LevelGenerator : MonoBehaviour
     public void CreateLevel()
     {
         Transform newSpawnPoint = spawnPosition.transform;
-        Generate(newSpawnPoint, 5); //reset size every next level 
+        Generate(newSpawnPoint, platformSize); //reset size every next level 
 
     }
 
@@ -73,8 +73,8 @@ public class LevelGenerator : MonoBehaviour
     {
         Transform newParent = firstPosition;
         int i = 0;
-        int firstPlatform = Random.Range(0, platforms.Length);
-        GameObject tempObject = Instantiate(platforms[firstPlatform], firstPosition.transform.position, Quaternion.identity) as GameObject;
+
+        GameObject tempObject = Instantiate(platforms[0], firstPosition.transform.position, Quaternion.identity) as GameObject;
 
         //parrent it to its is spawn point
         tempObject.transform.parent = newParent;
@@ -85,14 +85,14 @@ public class LevelGenerator : MonoBehaviour
         //Player needs to get spawn at the first platform;
         GameObject newPlayer = Instantiate(player, tempObject.gameObject.transform.GetChild(3).position, Quaternion.identity) as GameObject;
         //parrent it to its is spawn point
-        newPlayer.transform.parent = newParent;
+        //newPlayer.transform.parent = newParent;
 
         //Retarget Camera to player;
         //CameraBehaviour._camera.SetNewTarget(newPlayer);
 
         for (int j = 0; j < size - 1; j++)
         {
-            i = Random.Range(0, platforms.Length);
+            i = genInt(i, platforms.Length);
             GameObject clone = Instantiate(platforms[i], tempPosition, Quaternion.identity) as GameObject;
             //parrent it to its is spawn point
             clone.transform.parent = newParent;
@@ -121,6 +121,15 @@ public class LevelGenerator : MonoBehaviour
 
     }
 
+    public static int genInt(int p, int Length)
+    {
+        int i = Random.Range(0, Length);
+        if (i == p)
+        {
+            i=genInt(p, Length);
+        }
+        return i;
+    }
 
     public void NextLevel()
     {

@@ -25,9 +25,21 @@ public class RotationControlScript : MonoBehaviour
 
     public LayerMask groundlayer;
 
+    public float selfRotationStartDelay = 1;
+    public float manualRotationStartDelay = 1;
+    bool manualRotationAllowed = false;
+    bool selfRotationAllowed = false;
+
+    IEnumerator selfRotationRoutine = null;
+    IEnumerator manualRotationRoutine = null;
+    delegate IEnumerator MyCoroutine();
+    MyCoroutine manualRotationCoroutine, selfRotationCoroutine;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        manualRotationCoroutine = ManualRotationStartDelay;
+        selfRotationCoroutine = SelfRotationDelay;
     }
 
     private void Update()
@@ -104,15 +116,33 @@ public class RotationControlScript : MonoBehaviour
         //         
         if (InputHandler.IsScreenTapped())
         {
-            rb.angularVelocity = Vector3.zero;
-            transform.Rotate(manualControlledRotation, 0, 0);
-            Debug.Log("manual rotation applied");
+            StartRoutine(manualRotationRoutine, manualRotationCoroutine);
+            StopRoutine(selfRotationRoutine);
+            selfRotationAllowed = false;
+            if (manualRotationAllowed)
+            {
+                rb.angularVelocity = Vector3.zero;
+                transform.Rotate(manualControlledRotation, 0, 0);
+                Debug.Log("manual rotation applied");
+
+            }
 
         }
         else
         {
+            StartRoutine(selfRotationRoutine, selfRotationCoroutine);
+            StopRoutine(manualRotationRoutine);
+            manualRotationAllowed = false;
+            
+            if (selfRotationAllowed)
+            {
+                if (rb.velocity.z >15)
+                {
+                    transform.Rotate(-manualSelfRotation, 0, 0);
 
-            transform.Rotate(-manualSelfRotation, 0, 0);
+                }
+
+            }
         }
 
         if (InputHandler.IsScreenTapped())
@@ -129,5 +159,39 @@ public class RotationControlScript : MonoBehaviour
     {
         gravityForce = Physics.gravity*(newGravityMultiplier - 1);
         rb.AddForce(gravityForce*rb.mass);
+    }
+
+    void StartRoutine(IEnumerator routine,MyCoroutine routine_function)
+    {
+        if (routine != null)
+        {
+            StopCoroutine(routine);
+            routine = null;
+
+        }
+        if (routine == null)
+        {
+            routine = routine_function();
+            StartCoroutine(routine);
+        }
+    }
+    void StopRoutine(IEnumerator routine)
+    {
+        if (routine != null)
+        {
+            StopCoroutine(routine);
+        }
+    }
+
+    IEnumerator SelfRotationDelay( )
+    {
+        yield return new WaitForSeconds(selfRotationStartDelay);
+        selfRotationAllowed = true;
+      
+    }
+    IEnumerator ManualRotationStartDelay( )
+    {
+        yield return new WaitForSeconds(manualRotationStartDelay);
+        manualRotationAllowed = true;
     }
 }
