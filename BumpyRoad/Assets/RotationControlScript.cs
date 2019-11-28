@@ -35,6 +35,8 @@ public class RotationControlScript : MonoBehaviour
     delegate IEnumerator MyCoroutine();
     MyCoroutine manualRotationCoroutine, selfRotationCoroutine;
 
+    public GameObject backWheelTrans;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,12 +49,12 @@ public class RotationControlScript : MonoBehaviour
         raycastPos = transform.position;
         bool groundDetected = false;
         Debug.DrawRay(raycastPos, Vector3.down * raycastDistance, Color.red);
-        groundDetected = Physics.Raycast(raycastPos, -transform.up, out hit, raycastDistance, groundlayer);
-        //         groundDetected = Physics.Raycast(raycastPos, Vector3.down, out hit, raycastDistance,groundlayer);
-        //         if (!groundDetected)
-        //         {
-        //             groundDetected = Physics.Raycast(raycastPos, -transform.up, out hit, raycastDistance,groundlayer);
-        //         }
+        groundDetected = Physics.Raycast(raycastPos, -transform.up, out hit, raycastDistance, groundlayer) ||
+                         Physics.Raycast(backWheelTrans.transform.position, transform.up, out hit, raycastDistance, groundlayer) ||
+                         Physics.Raycast(raycastPos, Vector3.down, out hit, raycastDistance, groundlayer) ||
+                         Physics.Raycast(backWheelTrans.transform.position, Vector3.down, out hit, raycastDistance, groundlayer);
+
+       
         if (groundDetected)
         {
             Debug.DrawRay(hit.point, hit.normal * raycastDistance, Color.blue);
@@ -130,26 +132,22 @@ public class RotationControlScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("self rotation applied");
             StartRoutine(selfRotationRoutine, selfRotationCoroutine);
             StopRoutine(manualRotationRoutine);
             manualRotationAllowed = false;
             
             if (selfRotationAllowed)
             {
-                if (rb.velocity.z >15)
-                {
+               
                     transform.Rotate(-manualSelfRotation, 0, 0);
 
-                }
+              
 
             }
         }
 
-        if (InputHandler.IsScreenTapped())
-        {
-            Debug.Log("torque added");
-
-        }
+       
 
     }
 
