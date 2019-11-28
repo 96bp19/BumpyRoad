@@ -4146,18 +4146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf888e1c7732b94da6a602ca8cd6948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlledRotatiobSpeed: 0
-  rotationSmoothness: 0.5
   raycastDistance: 4
-  selfRotationSpeed: 0
-  usePhysicsSimulatedRotation: 0
   manualSelfRotation: -0.4
   manualControlledRotation: -1.1
   groundlayer:
     serializedVersion: 2
     m_Bits: 256
-  selfRotationStartDelay: 0.5
-  manualRotationStartDelay: 0
   backWheelTrans: {fileID: 1159836829}
   newGravityMultiplier: 3
 --- !u!114 &1713403959
@@ -5292,6 +5286,101 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032319425483, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: manualSelfRotation
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032319425483, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: raycastDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032319425483, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: manualControlledRotation
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032319425482, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877522592992239200, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032171830834, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032245006803, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032171830832, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: restLength
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032171830832, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: movingForce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032171830832, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: deaccelerationTime
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032171830832, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: springStiffness
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032245006801, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: restLength
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032245006801, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: movingForce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032245006801, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: deaccelerationTime
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125032245006801, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: springStiffness
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125033327037527, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: restLength
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125033327037527, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: movingForce
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125033894473639, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: restLength
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787125033894473639, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
+        type: 3}
+      propertyPath: movingForce
+      value: 40000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807b32e09f8a10541a08ca82f5b2bf3b, type: 3}

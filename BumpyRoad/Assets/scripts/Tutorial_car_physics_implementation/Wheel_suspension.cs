@@ -33,7 +33,7 @@ public class Wheel_suspension : MonoBehaviour
     public float steerAngle;
 
     public float wheelAngle;
-    public float wheelTurnSmoothness=10;
+    public float wheelTurnSmoothness = 10;
 
 
     public float force_x;
@@ -51,7 +51,7 @@ public class Wheel_suspension : MonoBehaviour
     private float deacelerateRate = 0;
 
 
-
+   
 
     void Start()
     {
@@ -82,6 +82,7 @@ public class Wheel_suspension : MonoBehaviour
     {
         CalculateCurrentAppliedForce();
         CalculateSuspensionAndMovingForce();
+       
 
     }
 
@@ -100,14 +101,26 @@ public class Wheel_suspension : MonoBehaviour
 
             wheelVelocity_localSpace = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
 
-            force_x = currentAppliedForce;
+
+            if (wheelFrontLeft || wheelFrontRight)
+            {
+                force_x = currentAppliedForce;
+                force_y = wheelVelocity_localSpace.x * currentAppliedForce;
+                 rb.AddForceAtPosition(suspensionForce + (force_x * transform.forward) + (force_y * -transform.right), hit.point);
+
+            }
+            else
+            {
+                 rb.AddForceAtPosition(suspensionForce *0.5f, hit.point);
+                force_x = 0;
+                force_y = 0;
+            }
             float brakeForce_x = movingForce - currentAppliedForce;
 
-            force_y = wheelVelocity_localSpace.x * currentAppliedForce;
 
 
 
-            rb.AddForceAtPosition(suspensionForce + (force_x * transform.forward) + (force_y * -transform.right), hit.point);
+
             if (rb.velocity.z <-15 )
             {
                 rb.AddForceAtPosition(-brakeForce_x*transform.forward,hit.point);
@@ -118,7 +131,7 @@ public class Wheel_suspension : MonoBehaviour
         }
     }
 
-    
+   
 
     void CalculateWheelPos()
     {
