@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ebdb2b7923adb554eb62e3138fea5e13
+guid: 20e1388af94c70e42afbcb458e2c2734
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -35,8 +35,8 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 2
-    addColliders: 1
+    meshCompression: 0
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
@@ -68,7 +68,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3

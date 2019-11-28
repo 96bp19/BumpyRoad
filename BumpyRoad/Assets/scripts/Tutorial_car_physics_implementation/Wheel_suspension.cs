@@ -108,7 +108,7 @@ public class Wheel_suspension : MonoBehaviour
 
 
             rb.AddForceAtPosition(suspensionForce + (force_x * transform.forward) + (force_y * -transform.right), hit.point);
-            if (rb.velocity.z >15 )
+            if (rb.velocity.z <-15 )
             {
                 rb.AddForceAtPosition(-brakeForce_x*transform.forward,hit.point);
 
