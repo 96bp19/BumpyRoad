@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &200561661325936318
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2346287450516689361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1364087873485794358, guid: b7541debb68449048b3386be3aef2dc3, type: 3}
 --- !u!1 &4692223680485108952
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +38,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4692223680485108952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 1.14, z: -5.79}
+  m_LocalPosition: {x: 4.7, y: 1.14, z: -5.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4692223680681297465}
@@ -54,7 +68,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4692223680495951534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00000061035, z: -46.1568}
+  m_LocalPosition: {x: 0.00000045776, y: -0.02335, z: -138.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4692223680681297465}
@@ -217,20 +231,6 @@ Transform:
   m_Father: {fileID: 4692223680939107147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &200561661325936318
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2346287450516689361}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -1364087873485794358, guid: b7541debb68449048b3386be3aef2dc3, type: 3}
 --- !u!1001 &6029859305049442520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8228c4be1dfc0fe43bf21428d68acd26, type: 2}
+    - target: {fileID: -1504981713932161579, guid: b7541debb68449048b3386be3aef2dc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7541debb68449048b3386be3aef2dc3, type: 3}
 --- !u!1 &2346287450516689361 stripped
