@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject startUI, gameOverUI, settingUI, doubleUI, playingUI, noThanksButton;
 
-    public TextMeshProUGUI levelText, diamondText;
+    public TextMeshProUGUI levelText, diamondText, fromText, toText;
 
     public Transform stageParent;
     private List <GameObject> stageItem = new List<GameObject>();
@@ -146,12 +146,7 @@ public class UIManager : MonoBehaviour
     {
         doubleUI.SetActive(true);
     }
-
-    public void UpdateLevelText(int i)
-    {
-        levelText.text = "LEVEL " + i;
-    }
-
+    
     public void LevelFinished()
     {
         levelGenerator = GameObject.Find("LevelGenerator");
@@ -161,5 +156,12 @@ public class UIManager : MonoBehaviour
 
         levelClear = true;
 
+    }
+
+    public void SetStageText(int stage)
+    {
+        fromText.text = ""+ stage;
+        toText.text = ""+ (stage+1);
+        levelText.text = "LEVEL " + stage;
     }
 }

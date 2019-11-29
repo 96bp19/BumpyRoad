@@ -63,6 +63,7 @@ public class LevelGenerator : MonoBehaviour
     }
     public void CreateLevel()
     {
+        UIManager.Instance.SetStageText(Getlevel());
         Transform newSpawnPoint = spawnPosition.transform;
         Generate(newSpawnPoint, platformSize); //reset size every next level 
 

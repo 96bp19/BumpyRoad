@@ -617,7 +617,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1dda5d9b532d20040810e71a82874673, type: 2}
+      objectReference: {fileID: 2100000, guid: b4043baccdccfd14dbd88e9a165e279a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3a42e97e63b66428ff60956f4a40db, type: 3}
 --- !u!1001 &540009525
@@ -1379,7 +1379,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -479
+      value: -743
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
@@ -1389,7 +1389,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 78
+      value: -308
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
@@ -1434,23 +1434,23 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.013537
+      value: 0.06452817
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.013537
+      value: 0.06452817
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.013537
+      value: 0.06452817
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: bb3a42e97e63b66428ff60956f4a40db,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 627914a3e0ff7a14c82d51c60880ec3a, type: 2}
+      objectReference: {fileID: 2100000, guid: 417945fd4c4494c4a818d56fd1605795, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3a42e97e63b66428ff60956f4a40db, type: 3}
 --- !u!1 &1462283046
@@ -1665,18 +1665,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf888e1c7732b94da6a602ca8cd6948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlledRotatiobSpeed: 0
-  rotationSmoothness: 0.5
   raycastDistance: 4
-  selfRotationSpeed: 0
-  usePhysicsSimulatedRotation: 0
   manualSelfRotation: 0.25
   manualControlledRotation: 0.5
   groundlayer:
     serializedVersion: 2
     m_Bits: 256
-  selfRotationStartDelay: 1
-  manualRotationStartDelay: 1
   backWheelTrans: {fileID: 1168116627}
   newGravityMultiplier: 3
 --- !u!114 &1713403959

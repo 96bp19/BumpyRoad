@@ -5,8 +5,8 @@
 		_MainColor("Main Color", Color) = (0.2,0.8,0.2,1)
 		_FogColor("Fog Color", Color) = (0.9,0.9,0.7,1)
 
-		_FogStartHeight("Fog Start Height", Range(-50, 50)) = 0
-		_FogFadeHeight("Fog Fade Height", Range(0.01, 500)) = 1
+		_FogStartHeight("Fog Start Height", Range(-5550, 55550)) = 0
+		_FogFadeHeight("Fog Fade Height", Range(0.01, 55500)) = 1
 
 	}
 	SubShader
