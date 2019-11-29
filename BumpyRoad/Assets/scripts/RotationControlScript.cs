@@ -16,18 +16,25 @@ public class RotationControlScript : MonoBehaviour
     private RaycastHit hit;
     private bool allowedToRotate;
     private Rigidbody rb;
-
+    
    
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-       
+        
+        
     }
+
+    
 
     private void Update()
     {
+        if (GameOverChecker .gameOver)
+        {
+            return;
+        }
         raycastPos = transform.position;
         bool groundDetected = false;
         groundDetected = Physics.Raycast(raycastPos, -transform.up, out hit, raycastDistance, groundlayer) ||

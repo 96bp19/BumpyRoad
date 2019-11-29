@@ -53,7 +53,7 @@ public class Wheel_suspension : MonoBehaviour
 
     [Header("Particles")]
     public GameObject WheelSmokeParticle;
-
+   
    
 
     void Start()
@@ -65,6 +65,10 @@ public class Wheel_suspension : MonoBehaviour
 
         acceleraterate = (movingForce / accelerationTime) * Time.fixedDeltaTime;
         deacelerateRate = (movingForce / deaccelerationTime) * Time.fixedDeltaTime;
+
+       
+
+
 
 
     }
@@ -92,7 +96,7 @@ public class Wheel_suspension : MonoBehaviour
 
     private void CalculateSuspensionAndMovingForce()
     {
-        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxLength + wheelRadius))
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxLength + wheelRadius) && !GameOverChecker.gameOver)
         {
             lastLength = springLength;
             springLength = hit.distance - wheelRadius;
@@ -168,6 +172,8 @@ public class Wheel_suspension : MonoBehaviour
         WheelSmokeParticle.SetActive(false);
         WheelSmokeParticle.SetActive(true);
     }
+
+  
 
    
 }
