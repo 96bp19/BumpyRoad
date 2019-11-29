@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3975750250056934186}
   m_Layer: 8
   m_Name: Road_2_basic_curve
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
