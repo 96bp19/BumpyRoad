@@ -24,6 +24,7 @@ public class RotationControlScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         
+        
     }
 
     

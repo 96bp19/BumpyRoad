@@ -2255,7 +2255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &398746998
 Transform:
   m_ObjectHideFlags: 0
@@ -2436,6 +2436,63 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 841312798}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &425934741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425934742}
+  - component: {fileID: 425934743}
+  - component: {fileID: 425934744}
+  m_Layer: 9
+  m_Name: Ball Checker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425934742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425934741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 698079847}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &425934743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425934741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.04, y: 1.77, z: 3.7}
+  m_Center: {x: 0, y: 1.92, z: -1.24}
+--- !u!114 &425934744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425934741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57033c4929fa3274bbc0a562c42e61d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &433054907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3333710715321355226, guid: 99745058cc8292041829d83f87ae7eb4,
@@ -4652,6 +4709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d7243d532b5bc4194ff3321739681b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceBelowGroundForDeathTrigger: 20
 --- !u!4 &765585974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3333710715321355226, guid: 99745058cc8292041829d83f87ae7eb4,
@@ -13196,7 +13254,7 @@ PrefabInstance:
     - target: {fileID: 1787125032319425483, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
         type: 3}
       propertyPath: manualControlledRotation
-      value: -0.8
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1787125032319425483, guid: 807b32e09f8a10541a08ca82f5b2bf3b,
         type: 3}

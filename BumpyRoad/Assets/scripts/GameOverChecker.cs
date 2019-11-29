@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameOverChecker : MonoBehaviour
 {
 
+
     public static bool gameOver;
     public float distanceBelowGroundForDeathTrigger = 20f;
 
