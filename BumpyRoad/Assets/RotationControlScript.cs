@@ -9,7 +9,8 @@ public class RotationControlScript : MonoBehaviour
     public float manualSelfRotation = 5f;
     public float manualControlledRotation = 10f;
     public LayerMask groundlayer;
-    public GameObject backWheelTrans;
+    public GameObject backWheelTrans , frontWheelTrans;
+    public float maxSpeed = 100f;
 
     private Vector3 raycastPos;
     private RaycastHit hit;
@@ -30,9 +31,11 @@ public class RotationControlScript : MonoBehaviour
         raycastPos = transform.position;
         bool groundDetected = false;
         groundDetected = Physics.Raycast(raycastPos, -transform.up, out hit, raycastDistance, groundlayer) ||
-                         Physics.Raycast(backWheelTrans.transform.position, transform.up, out hit, raycastDistance, groundlayer) ||
+                         Physics.Raycast(backWheelTrans.transform.position, -transform.up, out hit, raycastDistance, groundlayer) ||
+                         Physics.Raycast(frontWheelTrans.transform.position, -transform.up, out hit, raycastDistance, groundlayer) ||
                          Physics.Raycast(raycastPos, Vector3.down, out hit, raycastDistance, groundlayer) ||
-                         Physics.Raycast(backWheelTrans.transform.position, Vector3.down, out hit, raycastDistance, groundlayer);
+                         Physics.Raycast(backWheelTrans.transform.position, Vector3.down, out hit, raycastDistance, groundlayer) ||
+                         Physics.Raycast(frontWheelTrans.transform.position, Vector3.down, out hit, raycastDistance, groundlayer);
 
        
         if (groundDetected)
@@ -50,6 +53,7 @@ public class RotationControlScript : MonoBehaviour
     private void FixedUpdate()
     {
         AddExtraGravity();
+        LimitVehicleVelocity();
     }
 
     void ApplyManualRotation()
@@ -76,6 +80,13 @@ public class RotationControlScript : MonoBehaviour
     {
         gravityForce = Physics.gravity*(newGravityMultiplier - 1);
         rb.AddForce(gravityForce*rb.mass);
+    }
+
+    void LimitVehicleVelocity()
+    {
+        Vector3 velocity = rb.velocity;
+        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+        rb.velocity = velocity;
     }
     
 }
