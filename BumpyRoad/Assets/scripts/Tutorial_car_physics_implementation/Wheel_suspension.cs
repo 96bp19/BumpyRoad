@@ -51,6 +51,9 @@ public class Wheel_suspension : MonoBehaviour
     private float deacelerateRate = 0;
 
 
+    [Header("Particles")]
+    public GameObject WheelSmokeParticle;
+
    
 
     void Start()
@@ -86,6 +89,7 @@ public class Wheel_suspension : MonoBehaviour
 
     }
 
+
     private void CalculateSuspensionAndMovingForce()
     {
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxLength + wheelRadius))
@@ -100,21 +104,12 @@ public class Wheel_suspension : MonoBehaviour
             suspensionForce = (springForce + damperForce) * transform.up;
 
             wheelVelocity_localSpace = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
+            force_x = currentAppliedForce;
+            force_y = wheelVelocity_localSpace.x * currentAppliedForce;
+            rb.AddForceAtPosition(suspensionForce + (force_x * transform.forward) + (force_y * -transform.right), hit.point);
 
-
-            if (wheelFrontLeft || wheelFrontRight)
-            {
-                force_x = currentAppliedForce;
-                force_y = wheelVelocity_localSpace.x * currentAppliedForce;
-                 rb.AddForceAtPosition(suspensionForce + (force_x * transform.forward) + (force_y * -transform.right), hit.point);
-
-            }
-            else
-            {
-                 rb.AddForceAtPosition(suspensionForce *0.5f, hit.point);
-                force_x = 0;
-                force_y = 0;
-            }
+            
+           
             float brakeForce_x = movingForce - currentAppliedForce;
 
 
@@ -125,6 +120,10 @@ public class Wheel_suspension : MonoBehaviour
             {
                 rb.AddForceAtPosition(-brakeForce_x*transform.forward,hit.point);
 
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnVehicleMoved(hit.point);
             }
 
 
@@ -161,6 +160,13 @@ public class Wheel_suspension : MonoBehaviour
             currentAppliedForce -= deacelerateRate;
             currentAppliedForce = Mathf.Max(currentAppliedForce, 0);
         }
+    }
+
+    void OnVehicleMoved(Vector3 groundPos)
+    {
+        WheelSmokeParticle.transform.position = groundPos;
+        WheelSmokeParticle.SetActive(false);
+        WheelSmokeParticle.SetActive(true);
     }
 
    
