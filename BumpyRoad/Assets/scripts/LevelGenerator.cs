@@ -120,6 +120,9 @@ public class LevelGenerator : MonoBehaviour
         //parrent it to its is spawn point
         counterTrigger.transform.parent = newParent;
 
+        // Measuring Distance for UI Update
+        //DistanceTool.Instance.InitializeDistance(tempObject.transform, counterClone.transform);
+
     }
 
     public static int genInt(int p, int Length)

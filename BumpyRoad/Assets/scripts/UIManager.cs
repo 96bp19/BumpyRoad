@@ -8,17 +8,14 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public GameObject startUI, gameOverUI, settingUI, doubleUI, playingUI, noThanksButton;
+    public GameObject startUI, gameOverUI, settingUI,  playingUI, levelClearUI, noThanksButton;
 
-    public TextMeshProUGUI levelText, diamondText, fromText, toText;
+    public TextMeshProUGUI levelText;
 
-    public Transform stageParent;
-    private List <GameObject> stageItem = new List<GameObject>();
     bool isPlaying = false;
     bool isDead = false;
     bool isStarted = false;
     bool levelClear = false;
-    public Sprite stageComplete, stagePlaying, stageNext;
 
 
     GameObject levelGenerator;
@@ -45,7 +42,7 @@ public class UIManager : MonoBehaviour
         playingUI.SetActive(true);
         gameOverUI.SetActive(false);
         settingUI.SetActive(false);
-        doubleUI.SetActive(false);
+        levelClearUI.SetActive(false);
     }
     // Update is called once per frame
     private void Update()
@@ -67,15 +64,7 @@ public class UIManager : MonoBehaviour
         else if(isStarted)
         {
             startUI.SetActive(true);
-            doubleUI.SetActive(false);
-            playingUI.SetActive(true);
-            gameOverUI.SetActive(false);
-            isStarted = false;
-        }
-        else if(isStarted)
-        {
-            startUI.SetActive(true);
-            doubleUI.SetActive(false);
+            levelClearUI.SetActive(false);
             playingUI.SetActive(true);
             gameOverUI.SetActive(false);
             isStarted = false;
@@ -83,7 +72,7 @@ public class UIManager : MonoBehaviour
         else if(levelClear)
         {
             startUI.SetActive(false);
-            doubleUI.SetActive(false);
+            levelClearUI.SetActive(true);
             gameOverUI.SetActive(false);
             levelClear = false;
         }
@@ -97,7 +86,6 @@ public class UIManager : MonoBehaviour
     public void GameOver()
     {
         isDead = true;
-        Debug.Log("Fuck Over");
     }
 
     public void NoThanksButton()
@@ -112,39 +100,10 @@ public class UIManager : MonoBehaviour
         noThanksButton.SetActive(true);
         yield return true;
     }
-    
-    public IEnumerator DeactiveStage(int s)
-    {
-            foreach (Transform g in stageParent.transform.GetComponentsInChildren<Transform>())
-            {
-                if (stageParent != g)
-                {
-                    stageItem.Add(g.gameObject);
-                    g.gameObject.SetActive(false);
-                    Debug.Log("Current Size: " + stageItem.Count);
-                }
-            }
-
-            Debug.Log("Total Size: " + stageItem.Count);
-
-            for (int i = 0; i < s; i++)
-            {
-                stageItem[i].gameObject.SetActive(true);
-                stageItem[i + 1].gameObject.GetComponent<Image>().sprite = stageNext;
-            }
-        yield return true;
-    }
-
-    public void ChangeStageUI(int s)
-    {
-        stageItem[s-2].gameObject.GetComponent<Image>().sprite = stageComplete;
-        stageItem[s-1].gameObject.GetComponent<Image>().sprite = stagePlaying;
-        Debug.Log("FUcking Stage: " + s);
-    }
 
     public void LevelCompletedUI()
     {
-        doubleUI.SetActive(true);
+        levelClearUI.SetActive(true);
     }
     
     public void LevelFinished()
@@ -155,13 +114,10 @@ public class UIManager : MonoBehaviour
         levelGeneratorCS.CheckStageUpdate();
 
         levelClear = true;
-
     }
 
     public void SetStageText(int stage)
     {
-        fromText.text = ""+ stage;
-        toText.text = ""+ (stage+1);
         levelText.text = "LEVEL " + stage;
     }
 }
