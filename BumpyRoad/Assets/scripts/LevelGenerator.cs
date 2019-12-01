@@ -16,7 +16,6 @@ public class LevelGenerator : MonoBehaviour
     public Transform spawnPosition;
 
     private int currentLevel;
-    int pLength;
     private void Awake()
     {
 
@@ -29,8 +28,6 @@ public class LevelGenerator : MonoBehaviour
             currentLevel = 1;
             PlayerPrefs.SetInt("CL", 1);
         }
-
-        pLength = manageStages();
 
     }
 
@@ -65,7 +62,7 @@ public class LevelGenerator : MonoBehaviour
     {
         UIManager.Instance.SetStageText(Getlevel());
         Transform newSpawnPoint = spawnPosition.transform;
-        Generate(newSpawnPoint, platformSize); //reset size every next level 
+        Generate(newSpawnPoint, LevelSize()); //reset size every next level 
 
     }
 
@@ -154,47 +151,24 @@ public class LevelGenerator : MonoBehaviour
         Debug.Log("Current Level: " + currentLevel);
     }
 
-    private int manageStages()
-    {
-        int i = 1;
-        if (currentLevel >= 1 && currentLevel < 5)
-        {
-            i = Random.Range(2, 3);
-        }
-        else if (currentLevel >= 5 && currentLevel < 10)
-        {
-            i = Random.Range(3, 5);
-        }
-        else if (currentLevel >= 10 && currentLevel < 20)
-        {
-            i = Random.Range(3, 6);
-        }
-        else if (currentLevel >= 20)
-        {
-            i = Random.Range(3, 7);
-        }
-
-        return i;
-    }
-
     private int LevelSize()
     {
         int i = 1;
         if (currentLevel >= 1 && currentLevel < 5)
         {
-            i = Random.Range(2, 3);
+            i = Random.Range(5, 10);
         }
         else if (currentLevel >= 5 && currentLevel < 10)
         {
-            i = Random.Range(2, 4);
+            i = Random.Range(7, 12);
         }
         else if (currentLevel >= 10 && currentLevel < 20)
         {
-            i = Random.Range(2, 5);
+            i = Random.Range(7, 15);
         }
         else if (currentLevel >= 40)
         {
-            i = Random.Range(2, 6);
+            i = Random.Range(7, 16);
         }
 
         return i;

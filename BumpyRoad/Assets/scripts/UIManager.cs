@@ -120,4 +120,9 @@ public class UIManager : MonoBehaviour
     {
         levelText.text = "LEVEL " + stage;
     }
+
+    public void NextLevel()
+    {
+
+    }
 }

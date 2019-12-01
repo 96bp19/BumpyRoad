@@ -3297,7 +3297,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 6099800089077584851, guid: 0d15415e227c3a74781293c5e325fd59, type: 3}
---- !u!65 &6396253193282593909
+--- !u!65 &7333613252471488908
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16215,7 +16215,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8228c4be1dfc0fe43bf21428d68acd26, type: 2}
+      objectReference: {fileID: 2100000, guid: b423df0e569484444ba2ce03669c38ff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d15415e227c3a74781293c5e325fd59, type: 3}
 --- !u!1 &1835033733923550973 stripped
@@ -16306,7 +16306,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8228c4be1dfc0fe43bf21428d68acd26, type: 2}
+      objectReference: {fileID: 2100000, guid: b423df0e569484444ba2ce03669c38ff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3ccb441b64681a428483319e98c6b0e, type: 3}
 --- !u!4 &3716101387962712730 stripped

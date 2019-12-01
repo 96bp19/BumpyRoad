@@ -52,6 +52,7 @@ public class GameEndChecker : MonoBehaviour
     void OnlevelComplete()
     {
         SpawnCelebrationParticle();
+        UIManager.Instance.LevelCompletedUI();
     }
 
     void SpawnCelebrationParticle()
