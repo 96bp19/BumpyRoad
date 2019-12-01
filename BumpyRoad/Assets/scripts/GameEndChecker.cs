@@ -67,6 +67,10 @@ public class GameEndChecker : MonoBehaviour
 
     void calculateDistance()
     {
+        if (player == null)
+        {
+            return;
+        }
         float currentDistance = player.transform.position.z - transform.position.z;
         remainingmeterinPercentage = 1 -currentDistance / maxMeter;
         remainingmeterinPercentage = Mathf.Clamp(remainingmeterinPercentage, 0f, 1f);

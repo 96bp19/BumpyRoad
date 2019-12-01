@@ -13868,7 +13868,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7189172523755343448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8b27be7b7afd1943bbc604d12a53d7b, type: 3}
   m_Name: 
@@ -15962,6 +15962,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1451467301910986562, guid: 3c4759dc70fd532408add088e6cfb3f2,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1451467301910986561, guid: 3c4759dc70fd532408add088e6cfb3f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16017,11 +16022,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1451467301910986562, guid: 3c4759dc70fd532408add088e6cfb3f2,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4759dc70fd532408add088e6cfb3f2, type: 3}
 --- !u!1 &6844638680583804423 stripped
@@ -16043,6 +16043,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7189172523755343451}
     m_Modifications:
+    - target: {fileID: 5325607963604209245, guid: f285951bd16a3c74dbb34d0c551c3439,
+        type: 3}
+      propertyPath: m_Name
+      value: Finisher
+      objectReference: {fileID: 0}
     - target: {fileID: 9201704935828765774, guid: f285951bd16a3c74dbb34d0c551c3439,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16103,11 +16108,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.011953999
       objectReference: {fileID: 0}
-    - target: {fileID: 5325607963604209245, guid: f285951bd16a3c74dbb34d0c551c3439,
-        type: 3}
-      propertyPath: m_Name
-      value: Finisher
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f285951bd16a3c74dbb34d0c551c3439, type: 3}
 --- !u!4 &3151086898354893919 stripped
@@ -16132,6 +16132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c3ccb441b64681a428483319e98c6b0e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c3ccb441b64681a428483319e98c6b0e,
         type: 3}
