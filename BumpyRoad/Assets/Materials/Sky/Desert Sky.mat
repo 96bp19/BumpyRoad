@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FUck This 1
-  m_Shader: {fileID: 4800000, guid: c56e5aa5c892378478077f9e75367b9b, type: 3}
+  m_Name: Desert Sky
+  m_Shader: {fileID: 4800000, guid: 912687b27900118419429b57a49d5cef, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -60,11 +60,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FogFadeHeight: 1425
-    - _FogStartHeight: -2050
+    - _Exponent1: 1
+    - _Exponent2: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Intensity: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -76,6 +77,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.18039213, g: 0.44051874, b: 0.5294118, a: 0}
+    - _Color2: {r: 0.3984514, g: 0.58914524, b: 0.6981132, a: 0}
+    - _Color3: {r: 0.17254902, g: 0.36862746, b: 0.5058824, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FogColor: {r: 0.6784314, g: 0.17254902, b: 0.20000002, a: 1}
-    - _MainColor: {r: 0.9245283, g: 0.59404165, b: 0.56256676, a: 1}

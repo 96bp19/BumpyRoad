@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: f36d5f4be605d82488f97937229fa38e, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 56ebe8ffcaae9c848b66cabbe8057d74, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37736133, g: 0.5703813, b: 0.53641814, a: 1}
+  m_IndirectSpecularColor: {r: 0.80803686, g: 0.623249, b: 0.5762244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -951,7 +951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &709520073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,15 +1663,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platforms:
-  - {fileID: 4692223680681297466, guid: b9b312f2d20f1394eb949bcd32252339, type: 3}
-  - {fileID: 4692223680681297466, guid: 8cb48db534413f940b378e6b8600676b, type: 3}
-  - {fileID: 4692223680681297466, guid: 473c5dbc8dc7e6c45a736fb0f21271e4, type: 3}
-  - {fileID: 4692223680681297466, guid: 5c4c24dc052e3d945b0344e586a320d0, type: 3}
-  - {fileID: 4692223680681297466, guid: fd23ccbb4a6340d408c00a5cad768ccc, type: 3}
-  - {fileID: 4692223680681297466, guid: bccca7ab0e1ac434f82b1899e2509985, type: 3}
-  - {fileID: 4692223680681297466, guid: 1f958799d40c6f0479b585b430a005ab, type: 3}
-  - {fileID: 4692223680681297466, guid: df6a79a99b92ed44b9b6077926ebd3db, type: 3}
-  counter: {fileID: 7189172523755343448, guid: 2166d933f98f48c488573335a22ad0dd, type: 3}
+  - {fileID: 4692223680681297466, guid: c6cb0255166222148b83bdf2e0bf15a8, type: 3}
+  - {fileID: 4692223680681297466, guid: e15eba07d253463408465e98a344b94b, type: 3}
+  - {fileID: 4692223680681297466, guid: 2fa8882a0a9deea409ba88fbb5468f13, type: 3}
+  - {fileID: 4692223680681297466, guid: 80932aee7fa5ee142a2af7d83c1edc87, type: 3}
+  - {fileID: 4692223680681297466, guid: c0f32dd1220d8014eb4d58b7e314e115, type: 3}
+  - {fileID: 4692223680681297466, guid: b9a1aab412c473643b09fef998e1ffc8, type: 3}
+  - {fileID: 4692223680681297466, guid: c50de9cc722e1194986a665522910d9c, type: 3}
+  - {fileID: 4692223680681297466, guid: e7f0968d9f43043468ab46a614b4426a, type: 3}
+  counter: {fileID: 7189172523755343448, guid: 4d862bbe7a97a1242b621cee86ec74fe, type: 3}
   counterEnableTrigger: {fileID: 1033728003}
   player: {fileID: 1713403952}
   platformSize: 10
