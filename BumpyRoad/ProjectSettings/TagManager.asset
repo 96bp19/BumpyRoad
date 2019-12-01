@@ -6,6 +6,7 @@ TagManager:
   tags:
   - balls
   - Ground
+  - MeterRemainingSlider
   layers:
   - Default
   - TransparentFX

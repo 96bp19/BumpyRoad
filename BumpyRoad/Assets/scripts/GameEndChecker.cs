@@ -1,11 +1,27 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameEndChecker : MonoBehaviour
 {
     int totalCount;
     public GameObject celebrationparticle;
+
+    Slider MeterRemainingSlider;
+    Transform player;
+    float remainingmeterinPercentage;
+    float maxMeter;
+    
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        MeterRemainingSlider = GameObject.FindGameObjectWithTag("MeterRemainingSlider").GetComponent<Slider>();
+        maxMeter = player.transform.position.z - transform.position.z;
+        
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("balls"))
@@ -42,5 +58,18 @@ public class GameEndChecker : MonoBehaviour
     {
         celebrationparticle.SetActive(false);
         celebrationparticle.SetActive(true);
+    }
+
+    private void Update()
+    {
+        calculateDistance();
+    }
+
+    void calculateDistance()
+    {
+        float currentDistance = player.transform.position.z - transform.position.z;
+        remainingmeterinPercentage = 1 -currentDistance / maxMeter;
+        remainingmeterinPercentage = Mathf.Clamp(remainingmeterinPercentage, 0f, 1f);
+        MeterRemainingSlider.value =  remainingmeterinPercentage;
     }
 }
