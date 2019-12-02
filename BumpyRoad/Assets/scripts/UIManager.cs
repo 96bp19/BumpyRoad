@@ -45,6 +45,39 @@ public class UIManager : MonoBehaviour
         levelClearUI.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (isPlaying)
+        {
+            startUI.SetActive(false);
+            playingUI.SetActive(true);
+            gameOverUI.SetActive(false);
+            isPlaying = false;
+        }
+        else if (isDead)
+        {
+            gameOverUI.SetActive(true);
+            playingUI.SetActive(false);
+            StartCoroutine(ActiveText());
+            isDead = false;
+        }
+        else if (isStarted)
+        {
+            startUI.SetActive(true);
+            levelClearUI.SetActive(false);
+            playingUI.SetActive(true);
+            gameOverUI.SetActive(false);
+            isStarted = false;
+        }
+        else if (levelClear)
+        {
+            startUI.SetActive(false);
+            levelClearUI.SetActive(false);
+            gameOverUI.SetActive(false);
+            levelClear = false;
+        }
+    }
+
     public void IsPlaying()
     {
         isPlaying = true;
