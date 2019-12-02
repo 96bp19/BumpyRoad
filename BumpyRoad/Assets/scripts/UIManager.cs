@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("UI manager start called");
         
         isStarted = true;
         // registering for delegate event
@@ -60,10 +62,14 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
+
+
         if (!isDead)
         {
             isDead = GameOverChecker.gameOver;
+
         }
+        
         if (isPlaying)
         {
             startUI.SetActive(false);
@@ -75,7 +81,7 @@ public class UIManager : MonoBehaviour
         {
             gameOverUI.SetActive(true);
             playingUI.SetActive(false);
-            StartCoroutine(ActiveText());
+           // StartCoroutine(ActiveText());
             isDead = false;
         }
         else if (isStarted)
@@ -138,8 +144,16 @@ public class UIManager : MonoBehaviour
         levelText.text = "LEVEL " + stage;
     }
 
-    public void NextLevel()
+    public void Restart()
     {
-
+        gameOverUI.SetActive(false);
+        startUI.SetActive(true);
+        levelClearUI.SetActive(false);
+        playingUI.SetActive(true);
+        isStarted = true;
+        isDead = false;
+        GameOverChecker.gameOver = false;
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        InputHandler.inputReceivedListeners += OnInputReceived;
     }
 }

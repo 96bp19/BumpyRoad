@@ -13,6 +13,9 @@ public class GameOverChecker : MonoBehaviour
     {
         if (gameOver)
         {
+
+            Debug.Log("Game over");
+            this.enabled = false;
             return;
         }
         if (transform.position.y < -distanceBelowGroundForDeathTrigger)
