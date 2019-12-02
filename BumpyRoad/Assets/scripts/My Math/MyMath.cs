@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using System.Collections;
 
 public static class MyMath
 {
@@ -171,6 +172,7 @@ public static class MyMath
 
     public static bool getSuccessRate(float successChance)
     {
+      
         if (Random.Range(0,100)<=successChance)
         {
             return true;
@@ -178,7 +180,16 @@ public static class MyMath
         return false;
     }
 
+    public static void RunFunctionAfter(System.Action functionName ,MonoBehaviour behaviour, float delay)
+    {
+        behaviour.StartCoroutine(DelayRoutine(functionName,delay));
+    }
 
+    public static IEnumerator DelayRoutine(System.Action functionname , float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        functionname();
+    }
 
 }
     public struct cameraToScreenInfo

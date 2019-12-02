@@ -12,10 +12,10 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI levelText;
 
-    bool isPlaying = false;
-    bool isDead = false;
-    bool isStarted = false;
-    bool levelClear = false;
+    public bool isPlaying = false; 
+    public bool isDead = false;    
+    public bool isStarted = false;
+    public bool levelClear = false;
 
 
     GameObject levelGenerator;
@@ -38,6 +38,11 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        
+        isStarted = true;
+        // registering for delegate event
+        InputHandler.inputReceivedListeners += OnInputReceived;
+
         startUI.SetActive(true);
         playingUI.SetActive(true);
         gameOverUI.SetActive(false);
@@ -45,8 +50,20 @@ public class UIManager : MonoBehaviour
         levelClearUI.SetActive(false);
     }
 
+    void OnInputReceived()
+    {
+        Debug.Log("Input received");
+        isPlaying = true;
+        // unregistering delegate routine so that this function will only called once
+        InputHandler.inputReceivedListeners -= OnInputReceived;
+    }
+
     private void Update()
     {
+        if (!isDead)
+        {
+            isDead = GameOverChecker.gameOver;
+        }
         if (isPlaying)
         {
             startUI.SetActive(false);
