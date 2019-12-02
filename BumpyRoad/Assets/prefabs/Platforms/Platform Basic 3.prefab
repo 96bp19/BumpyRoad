@@ -10580,6 +10580,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1331aabb4e7e7ad4995bd0c4cb3e866e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1331aabb4e7e7ad4995bd0c4cb3e866e,
         type: 3}
       propertyPath: m_LocalPosition.x
