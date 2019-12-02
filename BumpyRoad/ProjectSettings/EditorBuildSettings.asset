@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2 Ice.unity
     guid: 2ee567582bc875e4cb54df43d1a61756
   - enabled: 1
-    path: Assets/Scenes/Light Testing.unity
-    guid: ad68970825f12a34e92699566563732e
+    path: Assets/Scenes/Level 3 Desert.unity
+    guid: 4d42cd1b06e4abb49822a70cb2afa58e
+  - enabled: 1
+    path: Assets/Scenes/Level 4 Volcano.unity
+    guid: f8eb108f961f08940b00475c4106dc0b
+  - enabled: 1
+    path: Assets/Scenes/Level 5 Green Land 1.unity
+    guid: 1a6422d30a7f80845a2e465188137714
   m_configObjects: {}

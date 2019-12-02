@@ -9,25 +9,23 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public GameObject startUI, gameOverUI, settingUI,  playingUI, levelClearUI, noThanksButton;
+    public GameObject startUI, gameOverUI, settingUI, playingUI, levelClearUI, noThanksButton;
 
     public TextMeshProUGUI levelText;
 
-    public bool isPlaying = false; 
-    public bool isDead = false;    
+    public bool isPlaying = false;
+    public bool isDead = false;
     public bool isStarted = false;
     public bool levelClear = false;
 
-
-    GameObject levelGenerator;
     LevelGenerator levelGeneratorCS;
 
     private void Awake()
     {
-        
+
         DontDestroyOnLoad(this.gameObject);
 
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -40,7 +38,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("UI manager start called");
-        
+
         isStarted = true;
         // registering for delegate event
         InputHandler.inputReceivedListeners += OnInputReceived;
@@ -69,7 +67,7 @@ public class UIManager : MonoBehaviour
             isDead = GameOverChecker.gameOver;
 
         }
-        
+
         if (isPlaying)
         {
             startUI.SetActive(false);
@@ -81,7 +79,7 @@ public class UIManager : MonoBehaviour
         {
             gameOverUI.SetActive(true);
             playingUI.SetActive(false);
-           // StartCoroutine(ActiveText());
+            // StartCoroutine(ActiveText());
             isDead = false;
         }
         else if (isStarted)
@@ -128,11 +126,10 @@ public class UIManager : MonoBehaviour
     {
         levelClearUI.SetActive(true);
     }
-    
+
     public void LevelFinished()
     {
-        levelGenerator = GameObject.Find("LevelGenerator");
-        levelGeneratorCS = levelGenerator.GetComponent<LevelGenerator>();
+        levelGeneratorCS = GameObject.FindObjectOfType<LevelGenerator>();
 
         levelGeneratorCS.CheckStageUpdate();
 
