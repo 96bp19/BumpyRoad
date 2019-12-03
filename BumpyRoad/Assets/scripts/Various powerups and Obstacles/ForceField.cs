@@ -7,17 +7,18 @@ public class ForceField : MonoBehaviour
     [Header("Normal force")]
     public float ForceFieldPower = 100;
     public ForceMode forceMode;
-    public ForceType forcetype;
     public Vector3 appliedForce;
 
     public float delay = 2f;
     Rigidbody steppedBody = null;
+    public GameObject LandMineParticle;
   
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             steppedBody = other.GetComponent<Rigidbody>();
+            LandMineParticle.SetActive(true);
             System.Action a = () => AddForce();
             MyMath.RunFunctionAfter(a, this, delay);  
    
@@ -34,17 +35,16 @@ public class ForceField : MonoBehaviour
 
     void AddForce()
     {
+        
         if (steppedBody == null)
         {
             return;
         }
+        
         steppedBody.AddForce(appliedForce * steppedBody.mass * ForceFieldPower, forceMode);
     }
     
 
 
-    public enum ForceType
-    {
-        E_ExplosionForce, E_ConstantForce
-    }
+    
 }
