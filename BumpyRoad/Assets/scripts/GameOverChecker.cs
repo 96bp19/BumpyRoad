@@ -24,12 +24,5 @@ public class GameOverChecker : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ground"))
-        {
-            Debug.Log("Player died");
-            gameOver = true;
-        }
-    }
+  
 }

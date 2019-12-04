@@ -892,7 +892,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3031936839031213387}
-  - component: {fileID: 143640422085248244}
   - component: {fileID: 6607320805192138603}
   m_Layer: 9
   m_Name: Gameover Checker
@@ -915,19 +914,6 @@ Transform:
   m_Father: {fileID: 1787125032319425481}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &143640422085248244
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3490811077503748409}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.04, y: 1.77, z: 1.01}
-  m_Center: {x: 0, y: 1.92, z: -1.03}
 --- !u!114 &6607320805192138603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,6 +1549,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e2b0fbbdc858804696c69b4c90011ba, type: 3}
+--- !u!4 &8839477087749230156 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7088952975340435137, guid: 2e2b0fbbdc858804696c69b4c90011ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1787125033984997517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7473721552161082379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -37477298204822394, guid: 2e2b0fbbdc858804696c69b4c90011ba,
@@ -1581,12 +1573,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1787125033984997517}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7362139771701034767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -79174035864172670, guid: 2e2b0fbbdc858804696c69b4c90011ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 1787125033984997517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6753024983191753623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2e2b0fbbdc858804696c69b4c90011ba,
@@ -1599,9 +1585,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1787125033984997517}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8839477087749230156 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7088952975340435137, guid: 2e2b0fbbdc858804696c69b4c90011ba,
+--- !u!1 &7362139771701034767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -79174035864172670, guid: 2e2b0fbbdc858804696c69b4c90011ba,
     type: 3}
   m_PrefabInstance: {fileID: 1787125033984997517}
   m_PrefabAsset: {fileID: 0}
