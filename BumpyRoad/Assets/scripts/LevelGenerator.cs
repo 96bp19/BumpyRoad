@@ -60,9 +60,12 @@ public class LevelGenerator : MonoBehaviour
     }
     public void CreateLevel()
     {
-        
+        Debug.Log("Level is:" + currentLevel);
+
         UIManager.Instance.SetStageText(Getlevel());
+
         Transform newSpawnPoint = spawnPosition.transform;
+
         Generate(newSpawnPoint, LevelSize()); //reset size every next level 
 
     }
@@ -91,7 +94,7 @@ public class LevelGenerator : MonoBehaviour
 
         for (int j = 0; j < size - 1; j++)
         {
-            i = genInt(i, platforms.Length);
+            i = genInt(i, GetPlatformID());
             GameObject clone = Instantiate(platforms[i], tempPosition, Quaternion.identity) as GameObject;
             //parrent it to its is spawn point
             clone.transform.parent = newParent;
@@ -157,7 +160,7 @@ public class LevelGenerator : MonoBehaviour
         int i = 1;
         if (currentLevel >= 1 && currentLevel < 5)
         {
-            i = Random.Range(5, 10);
+            i = Random.Range(6, 10);
         }
         else if (currentLevel >= 5 && currentLevel < 10)
         {
@@ -165,12 +168,44 @@ public class LevelGenerator : MonoBehaviour
         }
         else if (currentLevel >= 10 && currentLevel < 20)
         {
-            i = Random.Range(7, 15);
+            i = Random.Range(9, 15);
         }
         else if (currentLevel >= 40)
         {
-            i = Random.Range(7, 16);
+            i = Random.Range(10, 20);
         }
+
+        return i;
+    }
+
+    private int GetPlatformID()
+    {
+        int i = 6;
+        if (currentLevel >= 1 && currentLevel < 5)
+        {
+            i = 6;
+        }
+        else if (currentLevel >= 5 && currentLevel < 10)
+        {
+            i = 7;
+        }
+        else if (currentLevel >= 10 && currentLevel < 20)
+        {
+            i = 9;
+        }
+        else if (currentLevel >= 20 && currentLevel < 30)
+        {
+            i = 10;
+        }
+        else if (currentLevel >= 30 && currentLevel < 40)
+        {
+            i = 12;
+        }
+        else if (currentLevel >= 50)
+        {
+            i = platforms.Length;
+        }
+
 
         return i;
     }
