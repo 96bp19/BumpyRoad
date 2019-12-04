@@ -19,6 +19,10 @@ public class ForceField : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (landMineSound)
+            {
+                VehicleSoundController.Instance.PlaySound(landMineSound);
+            }
             steppedBody = other.GetComponent<Rigidbody>();
             LandMineParticle.SetActive(true);
             System.Action a = () => AddForce();
@@ -31,10 +35,7 @@ public class ForceField : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (landMineSound)
-            {
-                VehicleSoundController.Instance.PlaySound(landMineSound);
-            }
+           
             steppedBody = null;
         }
     }
