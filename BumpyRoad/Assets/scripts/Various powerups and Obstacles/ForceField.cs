@@ -38,6 +38,7 @@ public class ForceField : MonoBehaviour
            
             steppedBody = null;
         }
+
     }
 
     void AddForce()
@@ -45,10 +46,12 @@ public class ForceField : MonoBehaviour
         
         if (steppedBody == null)
         {
+            Destroy(gameObject);
             return;
         }
         
         steppedBody.AddForce(appliedForce * steppedBody.mass * ForceFieldPower, forceMode);
+         Destroy(gameObject);
     }
     
 
