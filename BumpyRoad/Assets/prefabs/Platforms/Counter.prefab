@@ -3283,6 +3283,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6396253193282593909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835033733923550973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 300.00012, y: 7344.49, z: 3904.919}
+  m_Center: {x: 150.00006, y: 1977, z: -3570}
 --- !u!64 &7858277994690321595
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3297,19 +3310,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 6099800089077584851, guid: 0d15415e227c3a74781293c5e325fd59, type: 3}
---- !u!65 &6396253193282593909
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835033733923550973}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 300.00012, y: 7344.49, z: 3904.919}
-  m_Center: {x: 150.00006, y: 1977, z: -3570}
 --- !u!1 &1874300395145759555
 GameObject:
   m_ObjectHideFlags: 0
@@ -13896,12 +13896,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7189172523755343448}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8b27be7b7afd1943bbc604d12a53d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   celebrationparticle: {fileID: 6844638680583804423}
+  celebrationSound: {fileID: 8300000, guid: c4ab5f42c2fbc384ab2b17680a1f6507, type: 3}
 --- !u!1 &7331907369125258847
 GameObject:
   m_ObjectHideFlags: 0

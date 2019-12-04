@@ -13902,6 +13902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   celebrationparticle: {fileID: 6844638680583804423}
+  celebrationSound: {fileID: 8300000, guid: c4ab5f42c2fbc384ab2b17680a1f6507, type: 3}
 --- !u!1 &7331907369125258847
 GameObject:
   m_ObjectHideFlags: 0

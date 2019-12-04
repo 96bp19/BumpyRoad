@@ -15,6 +15,7 @@ public class BallSpawnerTrigger : MonoBehaviour
     int currentSpawnedBall =0;
 
 
+    public AudioClip ballSpawnSound;
     private void Start()
     {
        bool canActivate =  MyMath.getSuccessRate(objectSpawnChance);
@@ -37,6 +38,10 @@ public class BallSpawnerTrigger : MonoBehaviour
 
     void SpawningBalls()
     {
+        if (ballSpawnSound)
+        {
+            VehicleSoundController.Instance.PlaySound(ballSpawnSound);
+        }
         currentSpawnedBall++;
        GameObject obj = Instantiate(ballPrefab, ballSpawnPos);
         obj.transform.position = ballSpawnPos.position;

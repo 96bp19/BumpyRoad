@@ -50,6 +50,7 @@ MonoBehaviour:
   appliedForce: {x: 0, y: 1, z: 0.5}
   delay: 0.7
   LandMineParticle: {fileID: 1364952159956006272}
+  landMineSound: {fileID: 8300000, guid: b24f3c25eef966240a2c05082a75ced4, type: 3}
 --- !u!65 &3507792611683299757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -140,17 +141,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 720564272706913235, guid: 48a5cd7a60236cd4c941fa2219d3aabe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2829734883253045595, guid: 48a5cd7a60236cd4c941fa2219d3aabe,
         type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494511100554907604, guid: 48a5cd7a60236cd4c941fa2219d3aabe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720564272706913235, guid: 48a5cd7a60236cd4c941fa2219d3aabe,
         type: 3}
       propertyPath: m_Layer
       value: 0

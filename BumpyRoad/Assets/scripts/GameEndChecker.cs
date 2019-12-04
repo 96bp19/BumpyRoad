@@ -11,7 +11,8 @@ public class GameEndChecker : MonoBehaviour
     Transform player;
     float remainingmeterinPercentage;
     float maxMeter;
-    
+
+    public AudioClip celebrationSound;
 
     private void Start()
     {
@@ -51,6 +52,7 @@ public class GameEndChecker : MonoBehaviour
 
     void OnlevelComplete()
     {
+        VehicleSoundController.Instance.PlaySound(celebrationSound);
         SpawnCelebrationParticle();
         UIManager.Instance.LevelCompletedUI();
     }

@@ -12,6 +12,8 @@ public class ForceField : MonoBehaviour
     public float delay = 2f;
     Rigidbody steppedBody = null;
     public GameObject LandMineParticle;
+
+    public AudioClip landMineSound;
   
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +31,10 @@ public class ForceField : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (landMineSound)
+            {
+                VehicleSoundController.Instance.PlaySound(landMineSound);
+            }
             steppedBody = null;
         }
     }

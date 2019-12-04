@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces_mesh: {fileID: 14714810215510490, guid: d0bb5460d2844424e98bf413b3c05b10,
     type: 3}
+  brokenClip: {fileID: 8300000, guid: 280687dc990274944bfac252b36e8679, type: 3}
 --- !u!65 &4279875364130808675
 BoxCollider:
   m_ObjectHideFlags: 0
