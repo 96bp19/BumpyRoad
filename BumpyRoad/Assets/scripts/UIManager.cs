@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
 
     void OnInputReceived()
     {
-        Debug.Log("Input received");
+
         isPlaying = true;
         // unregistering delegate routine so that this function will only called once
         InputHandler.inputReceivedListeners -= OnInputReceived;
