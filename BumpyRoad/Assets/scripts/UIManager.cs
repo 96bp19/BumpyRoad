@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using GameAnalyticsSDK;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class UIManager : MonoBehaviour
     public bool levelClear = false;
 
     LevelGenerator levelGeneratorCS;
+
+    bool gameOver = false;
+
+    
 
     private void Awake()
     {
@@ -48,6 +53,8 @@ public class UIManager : MonoBehaviour
         gameOverUI.SetActive(false);
         settingUI.SetActive(false);
         levelClearUI.SetActive(false);
+
+       
     }
 
     void OnInputReceived()
@@ -77,6 +84,7 @@ public class UIManager : MonoBehaviour
         }
         else if (isDead)
         {
+            GameOver();
             gameOverUI.SetActive(true);
             playingUI.SetActive(false);
             // StartCoroutine(ActiveText());
@@ -84,6 +92,7 @@ public class UIManager : MonoBehaviour
         }
         else if (isStarted)
         {
+            GameStarted();
             startUI.SetActive(true);
             levelClearUI.SetActive(false);
             playingUI.SetActive(true);
@@ -104,11 +113,43 @@ public class UIManager : MonoBehaviour
         isPlaying = true;
     }
 
+
+    /// <summary>
+    ///  these three functions are used to provide event to  fgame analytics manager
+    /////////////////////////////////////
+    /////////////////////////////////////
+    public void GameStarted()
+    {
+        // this is running as expected
+
+        GameAnalyticsManager.Instance.OnLevelStarted();
+
+        gameOver = false;
+    }
+
     public void GameOver()
     {
         isDead = true;
+        if (gameOver == false)
+        {
+            GameAnalyticsManager.Instance.OnLevelFailed();
+            gameOver = true;
+
+
+        }
     }
 
+    public void LevelCompletedUI()
+    {
+
+
+        GameAnalyticsManager.Instance.OnLevelCompleted();
+        levelClearUI.SetActive(true);
+    }
+
+    /////////////////////////////////////
+    /////////////////////////////////////
+    /// </summary>
     public void NoThanksButton()
     {
         isStarted = true;
@@ -122,13 +163,11 @@ public class UIManager : MonoBehaviour
         yield return true;
     }
 
-    public void LevelCompletedUI()
-    {
-        levelClearUI.SetActive(true);
-    }
 
     public void LevelFinished()
     {
+        // only called when next level is loaded 
+        // so needs some fixing here
         levelGeneratorCS = GameObject.FindObjectOfType<LevelGenerator>();
 
         levelGeneratorCS.CheckStageUpdate();
@@ -143,6 +182,7 @@ public class UIManager : MonoBehaviour
 
     public void Restart()
     {
+       
         gameOverUI.SetActive(false);
         startUI.SetActive(true);
         levelClearUI.SetActive(false);

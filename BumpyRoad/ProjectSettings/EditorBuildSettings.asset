@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 5 Green Land 1.unity
     guid: 1a6422d30a7f80845a2e465188137714
+  - enabled: 1
+    path: Assets/Scenes/Level 6 Bonus.unity
+    guid: 78c427b5639ac114db766bac95f08765
   m_configObjects: {}
