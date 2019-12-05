@@ -786,7 +786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &709520073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,15 +1404,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platforms:
-  - {fileID: 4692223680681297466, guid: b9b312f2d20f1394eb949bcd32252339, type: 3}
-  - {fileID: 4692223680681297466, guid: 8cb48db534413f940b378e6b8600676b, type: 3}
-  - {fileID: 4692223680681297466, guid: 473c5dbc8dc7e6c45a736fb0f21271e4, type: 3}
-  - {fileID: 4692223680681297466, guid: 5c4c24dc052e3d945b0344e586a320d0, type: 3}
-  - {fileID: 4692223680681297466, guid: fd23ccbb4a6340d408c00a5cad768ccc, type: 3}
-  - {fileID: 4692223680681297466, guid: bccca7ab0e1ac434f82b1899e2509985, type: 3}
-  - {fileID: 4692223680681297466, guid: 1f958799d40c6f0479b585b430a005ab, type: 3}
-  - {fileID: 4692223680681297466, guid: df6a79a99b92ed44b9b6077926ebd3db, type: 3}
-  counter: {fileID: 7189172523755343448, guid: 2166d933f98f48c488573335a22ad0dd, type: 3}
+  - {fileID: 4692223680681297466, guid: 6d040f7315ec9fa439ac8b89ef5cde88, type: 3}
+  - {fileID: 4692223680681297466, guid: 6ea24a5063c98a644a4fa701b41c1df2, type: 3}
+  - {fileID: 4692223680681297466, guid: b7df5945e4c8bef489b68dc66282d36d, type: 3}
+  - {fileID: 4692223680681297466, guid: 59f699c4fb3b22446a1df0ded0752e08, type: 3}
+  - {fileID: 4692223680681297466, guid: 08cc8c76e3b8022489f6856316794372, type: 3}
+  - {fileID: 4692223680681297466, guid: 399f9db067ce201468dc665306cb93aa, type: 3}
+  - {fileID: 4692223680681297466, guid: f059843f62d805e449cb152c2dc64914, type: 3}
+  - {fileID: 4692223680681297466, guid: f86190cec0d05ed4ab065cc8e354def4, type: 3}
+  - {fileID: 4692223680681297466, guid: 9e07efca703058c41aa6465bf7b029e3, type: 3}
+  - {fileID: 4692223680681297466, guid: 5be93e2055a9a5e4b8433a6fa7edfe3b, type: 3}
+  - {fileID: 4692223680681297466, guid: c76a38a1c15831348a6c306586601945, type: 3}
+  - {fileID: 4692223680681297466, guid: d13819fdf7900484cbdab46757e2143e, type: 3}
+  - {fileID: 4692223680681297466, guid: 07edd6644db6d024eab89210f7086202, type: 3}
+  - {fileID: 4692223680681297466, guid: 4c8e93376d3b77b4d88d51b3789ddb19, type: 3}
+  - {fileID: 4692223680681297466, guid: 95f8c50318822c34a940419b07152d08, type: 3}
+  - {fileID: 4692223680681297466, guid: 344ce74eb86a58049968fa9fb99602c8, type: 3}
+  - {fileID: 4692223680681297466, guid: 602f4b39972f3da4aa8faffe692b6683, type: 3}
+  - {fileID: 4692223680681297466, guid: 0fd8aaff7cea2de4a91307f856b9a9a1, type: 3}
+  counter: {fileID: 7189172523755343448, guid: 289c5b752bd48a14399a67367dfdea20, type: 3}
   counterEnableTrigger: {fileID: 1033728003}
   player: {fileID: 1713403952}
   platformSize: 10
