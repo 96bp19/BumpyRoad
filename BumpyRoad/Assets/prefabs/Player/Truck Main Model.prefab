@@ -370,6 +370,12 @@ MonoBehaviour:
   movingForce: 0
   accelerationTime: 0.1
   deaccelerationTime: 5
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055957332308800}
 --- !u!1 &1787125032245006803
 GameObject:
@@ -433,6 +439,12 @@ MonoBehaviour:
   movingForce: 0
   accelerationTime: 0.1
   deaccelerationTime: 5
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055957329030374}
 --- !u!1 &1787125032319425485
 GameObject:
@@ -721,6 +733,12 @@ MonoBehaviour:
   movingForce: 40000
   accelerationTime: 0.1
   deaccelerationTime: 1
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055958525006325}
 --- !u!1 &1787125033894473641
 GameObject:
@@ -784,6 +802,12 @@ MonoBehaviour:
   movingForce: 40000
   accelerationTime: 0.1
   deaccelerationTime: 1
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055958268617916}
 --- !u!1 &2083567419083745165
 GameObject:
