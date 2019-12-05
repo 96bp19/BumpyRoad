@@ -152,6 +152,7 @@ public class LevelGenerator : MonoBehaviour
         SaveLevel(currentLevel, s);
 
         SceneManager.LoadSceneAsync(s);
+        UIManager.Instance.GameStarted();
         Debug.Log("Current Level: " + currentLevel);
     }
 
