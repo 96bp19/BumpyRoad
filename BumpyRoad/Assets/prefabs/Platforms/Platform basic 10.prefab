@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7439766439012951553}
   - component: {fileID: 7150085638961346849}
   - component: {fileID: 100222160979088769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,20 +110,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 66
   m_CollisionDetection: 0
---- !u!64 &1874214651335065850
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8459769419380174531}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4670371673946364318, guid: 35554976580e89f4db10debfba11ca11, type: 3}
 --- !u!1 &1462895733449173637
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711488603370626636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +156,7 @@ GameObject:
   - component: {fileID: 7674007909113070633}
   - component: {fileID: 5332026534896558721}
   - component: {fileID: 1149191869457037937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +266,7 @@ GameObject:
   - component: {fileID: 723147798082922134}
   - component: {fileID: 4671812686329625627}
   - component: {fileID: 758205271852599933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680485108935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680495951533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Next Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680681297465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform basic 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680682497519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -511,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680939107147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223681153078952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -574,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223681422618629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -595,6 +581,20 @@ Transform:
   m_Father: {fileID: 4692223680939107147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1874214651335065850
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459769419380174531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -4670371673946364318, guid: 35554976580e89f4db10debfba11ca11, type: 3}
 --- !u!1001 &452275730715342794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -606,6 +606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Road_10_High_Hill
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 35554976580e89f4db10debfba11ca11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 35554976580e89f4db10debfba11ca11,
         type: 3}

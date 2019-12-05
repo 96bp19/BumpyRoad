@@ -55,6 +55,8 @@ public class GameEndChecker : MonoBehaviour
         VehicleSoundController.Instance.PlaySound(celebrationSound);
         SpawnCelebrationParticle();
         UIManager.Instance.LevelCompletedUI();
+
+        Destroy(this.GetComponent<BoxCollider>());
     }
 
     void SpawnCelebrationParticle()

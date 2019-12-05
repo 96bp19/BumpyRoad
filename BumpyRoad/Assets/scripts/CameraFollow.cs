@@ -21,6 +21,6 @@ public class CameraFollow : MonoBehaviour
         }
         transform.position = ObjectToFollow.transform.position + followOffset;
 
-        Debug.Log("gameover : " + GameOverChecker.gameOver);
+
     }
 }

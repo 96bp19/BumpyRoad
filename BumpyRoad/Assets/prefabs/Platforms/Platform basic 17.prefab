@@ -25,7 +25,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680485108935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680495951533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Next Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680681297465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform basic 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680682497519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223680939107147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223681153078952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692223681422618629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -278,6 +278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: breakable_wall_base
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417911460479591842, guid: 6fe905be376e84a4685fcf9d4546c0dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1816504833743099825, guid: 6fe905be376e84a4685fcf9d4546c0dd,
         type: 3}
@@ -349,11 +354,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4692223680681297465}
     m_Modifications:
-    - target: {fileID: 2613301972413649835, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
-        type: 3}
-      propertyPath: m_Name
-      value: Bridge
-      objectReference: {fileID: 0}
     - target: {fileID: 2613301972413649832, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,6 +409,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2613301972413649835, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Bridge
+      objectReference: {fileID: 0}
     - target: {fileID: 6297647848959407023, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
         type: 3}
       propertyPath: m_TagString
@@ -419,31 +424,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
-    - target: {fileID: 5866118997593611679, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866118997593611679, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783262231435092672, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5717719221587691379, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8228c4be1dfc0fe43bf21428d68acd26, type: 2}
-    - target: {fileID: 5717719222274027479, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8228c4be1dfc0fe43bf21428d68acd26, type: 2}
     - target: {fileID: 2613301971833094313, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
         type: 3}
       propertyPath: m_Limits.bounciness
@@ -644,6 +624,31 @@ PrefabInstance:
       propertyPath: m_Limits.bounciness
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5717719221587691379, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8228c4be1dfc0fe43bf21428d68acd26, type: 2}
+    - target: {fileID: 5717719222274027479, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8228c4be1dfc0fe43bf21428d68acd26, type: 2}
+    - target: {fileID: 5866118997593611679, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866118997593611679, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783262231435092672, guid: 2c9194b2a3b81d047bb2e54ae18c66c2,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c9194b2a3b81d047bb2e54ae18c66c2, type: 3}
 --- !u!1 &1181556813508220498 stripped
@@ -681,6 +686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: breakable_wall_base (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417911460479591842, guid: 6fe905be376e84a4685fcf9d4546c0dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1816504833743099825, guid: 6fe905be376e84a4685fcf9d4546c0dd,
         type: 3}

@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &9006966729306487409
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323782531690617010}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2735251984287490357, guid: 8d599e51187cc5f4580ddd17c3efd1c8, type: 3}
 --- !u!54 &7807781189121935921
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30,6 +16,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &9006966729306487409
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323782531690617010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2735251984287490357, guid: 8d599e51187cc5f4580ddd17c3efd1c8, type: 3}
 --- !u!1 &4692223680485108952
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,16 +351,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4692223680681297465}
     m_Modifications:
-    - target: {fileID: 2193970057627060752, guid: aafa77f0ad030bf4c9926b4a78dbb5a0,
-        type: 3}
-      propertyPath: m_Name
-      value: alert
-      objectReference: {fileID: 0}
-    - target: {fileID: 2193970057627060752, guid: aafa77f0ad030bf4c9926b4a78dbb5a0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2894079514997078019, guid: aafa77f0ad030bf4c9926b4a78dbb5a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -430,6 +420,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.02446676
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193970057627060752, guid: aafa77f0ad030bf4c9926b4a78dbb5a0,
+        type: 3}
+      propertyPath: m_Name
+      value: alert
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193970057627060752, guid: aafa77f0ad030bf4c9926b4a78dbb5a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aafa77f0ad030bf4c9926b4a78dbb5a0, type: 3}

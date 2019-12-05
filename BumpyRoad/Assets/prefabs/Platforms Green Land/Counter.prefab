@@ -8071,10 +8071,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1451467301910986562, guid: 3c4759dc70fd532408add088e6cfb3f2,
+    - target: {fileID: 1451467301910986572, guid: 3c4759dc70fd532408add088e6cfb3f2,
         type: 3}
-      propertyPath: looping
-      value: 0
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1451467301910986561, guid: 3c4759dc70fd532408add088e6cfb3f2,
         type: 3}
@@ -8131,6 +8131,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1451467301910986562, guid: 3c4759dc70fd532408add088e6cfb3f2,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4759dc70fd532408add088e6cfb3f2, type: 3}
 --- !u!1 &6844638680583804423 stripped
@@ -8156,6 +8161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Finisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325607963604209245, guid: f285951bd16a3c74dbb34d0c551c3439,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9201704935828765774, guid: f285951bd16a3c74dbb34d0c551c3439,
         type: 3}
@@ -8236,6 +8246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: end
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0d15415e227c3a74781293c5e325fd59,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0d15415e227c3a74781293c5e325fd59,
         type: 3}
