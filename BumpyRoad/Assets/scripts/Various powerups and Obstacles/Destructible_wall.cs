@@ -14,7 +14,6 @@ public class Destructible_wall : MonoBehaviour
             if (brokenClip)
             {
                 VehicleSoundController.Instance.PlaySound(brokenClip);
-
             }
             Instantiate(pieces_mesh,transform.position,Quaternion.Euler(0,90,0)); 
             Destroy(gameObject);

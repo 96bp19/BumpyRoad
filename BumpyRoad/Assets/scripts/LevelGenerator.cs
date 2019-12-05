@@ -16,6 +16,19 @@ public class LevelGenerator : MonoBehaviour
     public Transform spawnPosition;
 
     private int currentLevel;
+
+    private static  LevelGenerator _Instance;
+    public static LevelGenerator Instance
+    {
+        get
+        {
+            if (_Instance == null)
+            {
+                _Instance = GameObject.FindObjectOfType<LevelGenerator>();
+            }
+            return _Instance;
+        }
+    }
     private void Awake()
     {
 
