@@ -7,14 +7,20 @@ public class ForceField : MonoBehaviour
     [Header("Normal force")]
     public float ForceFieldPower = 100;
     public ForceMode forceMode;
-    public Vector3 appliedForce;
+    private Vector3 appliedForce;
 
     public float delay = 2f;
     Rigidbody steppedBody = null;
     public GameObject LandMineParticle;
 
     public AudioClip landMineSound;
-  
+
+    private void Start()
+    {
+        appliedForce = new Vector3(0, 1, 0.5f);
+        appliedForce.z = Random.Range(-0.7f, 0.7f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
