@@ -98,6 +98,11 @@ public class VehicleSoundController : MonoBehaviour
     private void ChangeSoundPitchAccordingToVehicleSpeed()
     {
         GetPlayerReference();
+        if (!vehicleAudioSource)
+        {
+            Debug.Log("vehicle not found");
+            return;
+        }
 
         vehicleAudioSource.mute = sound_enabled;
         
