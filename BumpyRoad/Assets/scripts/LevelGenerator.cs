@@ -157,7 +157,7 @@ public class LevelGenerator : MonoBehaviour
 
     private int LevelSize()
     {
-        int i = 1;
+        int i = 6;
         if (currentLevel >= 1 && currentLevel < 5)
         {
             i = Random.Range(6, 10);
@@ -170,9 +170,13 @@ public class LevelGenerator : MonoBehaviour
         {
             i = Random.Range(9, 15);
         }
+        else if (currentLevel >= 20 && currentLevel < 40)
+        {
+            i = Random.Range(10, 18);
+        }
         else if (currentLevel >= 40)
         {
-            i = Random.Range(10, 20);
+            i = Random.Range(12, 25);
         }
 
         return i;
@@ -201,7 +205,7 @@ public class LevelGenerator : MonoBehaviour
         {
             i = 12;
         }
-        else if (currentLevel >= 50)
+        else if (currentLevel >= 40)
         {
             i = platforms.Length;
         }
