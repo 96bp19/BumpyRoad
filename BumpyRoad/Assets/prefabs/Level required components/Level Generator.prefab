@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8359044037196939273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8359044037196939271}
+  - component: {fileID: 8359044037196939272}
+  m_Layer: 0
+  m_Name: Level Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8359044037196939271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359044037196939273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8359044037196939272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359044037196939273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615016f21b22f7247ab22c7c401d1df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platforms:
+  - {fileID: 4692223680681297466, guid: c05fed35564ee774691dfbffc65b4b44, type: 3}
+  - {fileID: 4692223680681297466, guid: c73b911ac9d1bb7449c9fddcc340db94, type: 3}
+  - {fileID: 4692223680681297466, guid: acfdc4d77c63cfe40a71b28ee84f16a4, type: 3}
+  - {fileID: 4692223680681297466, guid: ff35340d0088a3c4c95d0b48b4144184, type: 3}
+  - {fileID: 4692223680681297466, guid: 740abe0127dbf894fbb282abeb045c40, type: 3}
+  - {fileID: 4692223680681297466, guid: 16e2c6dc59f05df40a08cb890e5d7227, type: 3}
+  - {fileID: 4692223680681297466, guid: 17e2977b750e78b48b6c331eff6cfb86, type: 3}
+  - {fileID: 4692223680681297466, guid: d5ce55a1c615d704cb0744936238219d, type: 3}
+  - {fileID: 4692223680681297466, guid: 1e2a240f22504354a96fbe65b69fa858, type: 3}
+  - {fileID: 4692223680681297466, guid: b4458f6d79ceaf4428429e788817b3fb, type: 3}
+  - {fileID: 4692223680681297466, guid: 87006919d77ff624c99a086a7f198969, type: 3}
+  - {fileID: 4692223680681297466, guid: 09c00dbe96d5f614c845a7819c61089c, type: 3}
+  - {fileID: 4692223680681297466, guid: 02c624a8e95772545abad45411c9bb87, type: 3}
+  - {fileID: 4692223680681297466, guid: 7b77a5fb0c772314299163bdcd222617, type: 3}
+  - {fileID: 4692223680681297466, guid: f4fc0d454bc3da34dbba0f1bf9ab408d, type: 3}
+  - {fileID: 4692223680681297466, guid: 991ea7a3f96bd6f4aad269e4363028cb, type: 3}
+  - {fileID: 4692223680681297466, guid: d1211573011356e49a426ce5a56dd536, type: 3}
+  - {fileID: 4692223680681297466, guid: 8aab54da584d9844f8d90b89ee35da92, type: 3}
+  counter: {fileID: 7189172523755343448, guid: ee414fbff5988704eae3ec7db70936ed, type: 3}
+  counterEnableTrigger: {fileID: 0}
+  player: {fileID: 1206635624504024162, guid: 9d23549e7507f4743b546bb1cc6bfd84, type: 3}
+  platformSize: 10
+  spawnPosition: {fileID: 0}

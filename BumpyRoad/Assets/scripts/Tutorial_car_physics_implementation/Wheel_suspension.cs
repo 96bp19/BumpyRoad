@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Wheel_suspension : MonoBehaviour
 {
@@ -51,10 +52,13 @@ public class Wheel_suspension : MonoBehaviour
     private float deacelerateRate = 0;
 
 
+    public Color[] dirtColors;
+
+
     [Header("Particles")]
     public GameObject WheelSmokeParticle;
-   
-   
+
+    private int sceneIndex =0;
 
     void Start()
     {
@@ -65,6 +69,10 @@ public class Wheel_suspension : MonoBehaviour
 
         acceleraterate = (movingForce / accelerationTime) * Time.fixedDeltaTime;
         deacelerateRate = (movingForce / deaccelerationTime) * Time.fixedDeltaTime;
+
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        WheelSmokeParticle.GetComponent<ParticleSystem>().startColor = dirtColors[sceneIndex];
 
        
 

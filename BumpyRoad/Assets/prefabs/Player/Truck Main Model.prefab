@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57033c4929fa3274bbc0a562c42e61d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BallRemainingText: {fileID: 0}
 --- !u!1 &759092854
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +196,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.74, y: 0.1, z: 3.52}
-  m_Center: {x: 0, y: 0.59, z: -1.34}
+  m_Size: {x: 1.9, y: 0.4, z: 3.6}
+  m_Center: {x: 0, y: 0.6, z: -1.34}
 --- !u!65 &1786239378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -306,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57033c4929fa3274bbc0a562c42e61d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BallRemainingText: {fileID: 0}
 --- !u!1 &1787125032171830834
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +370,12 @@ MonoBehaviour:
   movingForce: 0
   accelerationTime: 0.1
   deaccelerationTime: 5
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055957332308800}
 --- !u!1 &1787125032245006803
 GameObject:
@@ -431,6 +439,12 @@ MonoBehaviour:
   movingForce: 0
   accelerationTime: 0.1
   deaccelerationTime: 5
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055957329030374}
 --- !u!1 &1787125032319425485
 GameObject:
@@ -501,15 +515,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf888e1c7732b94da6a602ca8cd6948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 2
-  manualSelfRotation: -0.6
+  raycastDistance: 3
+  manualSelfRotation: -0.8
   manualControlledRotation: -1.5
   groundlayer:
     serializedVersion: 2
     m_Bits: 1280
   backWheelTrans: {fileID: 6273882214771434489}
   frontWheelTrans: {fileID: 7362139771701034767}
-  maxSpeed: 100
+  maxSpeed: 90
   newGravityMultiplier: 5
 --- !u!54 &1787125032319425482
 Rigidbody:
@@ -719,6 +733,12 @@ MonoBehaviour:
   movingForce: 40000
   accelerationTime: 0.1
   deaccelerationTime: 1
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055958525006325}
 --- !u!1 &1787125033894473641
 GameObject:
@@ -782,6 +802,12 @@ MonoBehaviour:
   movingForce: 40000
   accelerationTime: 0.1
   deaccelerationTime: 1
+  dirtColors:
+  - {r: 0.92141336, g: 0.9507979, b: 0.9622642, a: 1}
+  - {r: 0.9433962, g: 0.46325845, b: 0.28034887, a: 1}
+  - {r: 0.20389818, g: 0.20466144, b: 0.5471698, a: 1}
+  - {r: 0.2784314, g: 0.5372549, b: 0.4117647, a: 1}
+  - {r: 0.7411765, g: 0.6006902, b: 0.49803922, a: 1}
   WheelSmokeParticle: {fileID: 1678055958268617916}
 --- !u!1 &2083567419083745165
 GameObject:
