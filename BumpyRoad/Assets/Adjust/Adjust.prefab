@@ -43,10 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525ece82a472e4dea837e1ef938fd15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startManually: 1
+  startManually: 0
   eventBuffering: 0
   sendInBackground: 0
   launchDeferredDeeplink: 1
-  appToken: '{Your App Token}'
-  logLevel: 3
+  appToken: "8yu94w5l8oow\_"
+  logLevel: 1
   environment: 0
