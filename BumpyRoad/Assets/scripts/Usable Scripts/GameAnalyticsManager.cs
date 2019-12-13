@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameAnalyticsSDK;
+using com.adjust.sdk;
 
 public class GameAnalyticsManager : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class GameAnalyticsManager : MonoBehaviour
     public void OnLevelStarted()
     {
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, Application.version, LevelGenerator.Instance.Getlevel().ToString("00000"));
+
+        AdjustEvent adjustEvent = new AdjustEvent("8yu94w5l8oow");
+        Adjust.trackEvent(adjustEvent);
         Debug.Log("Level Started ");
     }
 
@@ -40,5 +44,11 @@ public class GameAnalyticsManager : MonoBehaviour
     public  void OnLevelFailed()
     {
         Debug.Log("Level Failed");
+    }
+
+    public static void GetIdfaID()
+    {
+        Debug.Log("Idfa id called ");
+        string idfa = Adjust.getIdfa();
     }
 }

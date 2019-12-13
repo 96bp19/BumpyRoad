@@ -58,6 +58,8 @@ public class LevelGenerator : MonoBehaviour
     public void Start()
     {
         CreateLevel();
+        GameAnalyticsManager.GetIdfaID();
+       
     }
 
     public void CheckStageUpdate()
