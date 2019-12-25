@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - MeterRemainingSlider
   - BallRemaining
+  - CapsuleBody
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Container
   - Container_items
   - Vehicle_body
-  - 
+  - CapsuleBody
   - 
   - 
   - 
