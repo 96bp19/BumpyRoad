@@ -159,7 +159,14 @@ public static class MyMath
         var MC = aHit.collider as MeshCollider;
         if (MC == null)
             return aHit.normal;
+
+      
         var M = MC.sharedMesh;
+        if (!MC.sharedMesh.isReadable)
+        {
+            Debug.Log("read write on mesh is disabled, please enable it in import setting to properly use smoothed normals");
+            return aHit.normal;
+        }
         var normals = M.normals;
         var indices = M.triangles;
         var N0 = normals[indices[aHit.triangleIndex * 3 + 0]];
@@ -189,6 +196,25 @@ public static class MyMath
     {
         yield return new WaitForSeconds(delay);
         functionname();
+    }
+
+    public static float LimitAngleFrom_0_To360(float angle)
+    {
+        float decimalVal = getDecimalFromFloat(angle);
+
+        angle = (int)angle % 360;
+        if (angle < 0)
+        {
+            angle = 360 - angle;
+        }
+
+
+        return angle + decimalVal;
+    }
+
+    public static float getDecimalFromFloat(float val)
+    {
+        return val - (int)val;
     }
 
 }
