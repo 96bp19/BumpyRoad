@@ -98,29 +98,13 @@ public class newWheel_suspension : MonoBehaviour
 
     void FixedUpdate()
     {
-        CalculateCurrentAppliedForce();
+        
         CalculateSuspensionAndMovingForce();
-        MoveVehicle();
+       // MoveVehicle();
 
     }
 
 
-    void MoveVehicle()
-    {
-        if( Physics.Raycast(transform.position, -transform.up, out RaycastHit hit,wheelRadius +2f) && !GameOverChecker.gameOver)
-        {
-            Vector3 forwardProjection = Vector3.ProjectOnPlane(transform.forward, hit.normal);
-         
-            if (wheelFrontLeft)
-            {
-                Vector3 newVEl = forwardProjection * currentAppliedForce;
-                rb.AddForce(newVEl, ForceMode.VelocityChange);
-            }
-         
-
-        }
-      
-    }
 
     private void CalculateSuspensionAndMovingForce()
     {
@@ -132,30 +116,15 @@ public class newWheel_suspension : MonoBehaviour
             springVelocity = (lastLength - springLength) / Time.fixedDeltaTime;
             springForce = springStiffness * (restLength - springLength);
             damperForce = damperStiffness * springVelocity;
-
-            force_x = currentAppliedForce;
             suspensionForce = (springForce + damperForce) * transform.up;
 
             wheelVelocity_localSpace = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
-            force_y = wheelVelocity_localSpace.x * currentAppliedForce;
-
-           
+            force_y = wheelVelocity_localSpace.x;
             rb.AddForceAtPosition(suspensionForce  + (force_y * -transform.right), hit.point);
-            float brakeForce_x = movingForce - currentAppliedForce;
-
-
-            if (rb.velocity.z <15 )
-            {
-                Debug.Log("braking");
-                rb.AddForceAtPosition(-brakeForce_x*transform.forward,hit.point);
-
-            }
             if (Input.GetMouseButtonDown(0))
             {
                 OnVehicleMoved(hit.point);
             }
-
-
         }
     }
 
@@ -163,33 +132,16 @@ public class newWheel_suspension : MonoBehaviour
 
     void CalculateWheelPos()
     {
-        //wheelMesh.position = transform.position-  new Vector3(0, springLength, 0);
-        Vector3 newWheelPos = transform.position;
-        // newWheelPos.y = (transform.position.y - springLength);
+        Vector3 newWheelPos = transform.position;  
         wheelMesh.position = -springLength * transform.up+ transform.position;
     }
 
     void calculateWheelRotation()
     {
         Vector3 rotation = wheelMesh.rotation.eulerAngles;
-
-        
         wheelMesh.Rotate(-Mathf.Sign(rb.velocity.z) * rb.velocity.magnitude*wheelRotateSpeed * Time.fixedDeltaTime, 0, 0);
     }
 
-    void CalculateCurrentAppliedForce()
-    {
-        if (InputHandler.IsScreenTapped())
-        {
-            currentAppliedForce += acceleraterate;
-            currentAppliedForce = Mathf.Min(currentAppliedForce, movingForce);
-        }
-        else
-        {
-            currentAppliedForce -= deacelerateRate;
-            currentAppliedForce = Mathf.Max(currentAppliedForce, 0);
-        }
-    }
 
     void OnVehicleMoved(Vector3 groundPos)
     {

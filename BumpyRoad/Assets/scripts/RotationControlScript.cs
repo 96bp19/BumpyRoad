@@ -39,12 +39,6 @@ public class RotationControlScript : MonoBehaviour
         }
         raycastPos = transform.position;
         bool groundDetected = false;
-        //         groundDetected = Physics.Raycast(raycastPos, -transform.up, out hit, raycastDistance, groundlayer) ||
-        //                          Physics.Raycast(backWheelTrans.transform.position, -transform.up, out hit, raycastDistance, groundlayer) ||
-        //                          Physics.Raycast(frontWheelTrans.transform.position, -transform.up, out hit, raycastDistance, groundlayer) ||
-        //                          Physics.Raycast(raycastPos, Vector3.down, out hit, raycastDistance, groundlayer) ||
-        //                          Physics.Raycast(backWheelTrans.transform.position, Vector3.down, out hit, raycastDistance, groundlayer) ||
-        //                          Physics.Raycast(frontWheelTrans.transform.position, Vector3.down, out hit, raycastDistance, groundlayer);
         groundDetected = groundChecker.groundDetected;
        
         if (groundDetected)
@@ -82,6 +76,7 @@ public class RotationControlScript : MonoBehaviour
     private void FixedUpdate()
     {
         AddExtraGravity();
+        MoveVehicle();
         LimitVehicleVelocity();
        // calculateVehicleRotation();
       //  transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 0, 0);
@@ -104,33 +99,22 @@ public class RotationControlScript : MonoBehaviour
     {
         if (!allowedToRotate)
         {
+            rb.constraints = RigidbodyConstraints.None;
+            rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionX;
             return;
         }
-
-   //     Vector3 previousAngularvel = rb.angularVelocity;
-        float desiredJumpVel = transform.InverseTransformDirection(rb.angularVelocity).x;
-        
-
-                rb.angularVelocity = Vector3.zero;
+        rb.freezeRotation = true;
+        rb.angularVelocity = Vector3.zero;
         if (InputHandler.IsScreenTapped())
         {
-             transform.Rotate(manualControlledRotation, 0, 0);
-           // desiredJumpVel = manualControlledRotation - desiredJumpVel;
-         //   Vector3 newAngularvel = Vector3.right * manualControlledRotation *Time.fixedDeltaTime;
-          //  rb.angularVelocity = newAngularvel;
-        //    rb.AddTorque(newAngularvel, ForceMode.VelocityChange);
-            
+            transform.Rotate(manualControlledRotation, 0, 0);
         }
         else
         {
              transform.Rotate(-manualSelfRotation, 0, 0);
-//             desiredJumpVel = manualSelfRotation - desiredJumpVel ;
-//             Vector3 newAngularvel = Vector3.right * manualSelfRotation * Time.fixedDeltaTime;
-//             rb.angularVelocity = newAngularvel;
-           // rb.AddTorque(newAngularvel, ForceMode.VelocityChange);
         }
 
-       // rb.maxAngularVelocity = manualControlledRotation * Time.fixedDeltaTime;
+
     }
 
     Vector3 gravityForce;
@@ -163,6 +147,18 @@ public class RotationControlScript : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    
+
+    void MoveVehicle()
+    {
+        if (InputHandler.IsScreenTapped() && !GameOverChecker.gameOver)
+        {
+            Vector3 newVEl = -transform.forward * 60 * Time.fixedDeltaTime;
+            rb.AddForce(newVEl, ForceMode.VelocityChange);
+
+        }
+        
+    }
+
+
 
 }
