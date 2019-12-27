@@ -140,11 +140,26 @@ public class RotationControlScript : MonoBehaviour
         gravityForce = Physics.gravity*(newGravityMultiplier - 1);
         rb.AddForce(gravityForce*rb.mass);
     }
+    public float currentSpeed;
+    public float acceleration = 60;
 
+    public Vector3 currentTransVal;
     void LimitVehicleVelocity()
     {
+        if (!groundChecker.groundDetected)
+        {
+            return;
+        }
+        currentTransVal = transform.forward;
+        float desiredSpeed = transform.forward.y*maxSpeed;
+        if (InputHandler.IsScreenTapped())
+        {
+            desiredSpeed = -1 * maxSpeed;
+        }
+        currentSpeed = Mathf.MoveTowards(currentSpeed, desiredSpeed, acceleration * Time.deltaTime);
         Vector3 velocity = rb.velocity;
-        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+        velocity = Vector3.ClampMagnitude(velocity, Mathf.Abs(currentSpeed));
+        velocity.y = rb.velocity.y;
         rb.velocity = velocity;
     }
 
