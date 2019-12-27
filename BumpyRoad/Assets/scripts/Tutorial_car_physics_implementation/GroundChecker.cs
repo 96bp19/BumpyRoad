@@ -10,11 +10,19 @@ public class GroundChecker : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        groundDetected = true;
+        if (!other.CompareTag("balls"))
+        {
+            groundDetected = true;
+            
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        groundDetected = false;
+        if (!other.CompareTag("balls"))
+        {
+            groundDetected = false;
+
+        }
     }
 }

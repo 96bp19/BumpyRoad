@@ -35,6 +35,7 @@ public class RotationControlScript : MonoBehaviour
     {
         if (GameOverChecker .gameOver)
         {
+            rb.constraints = RigidbodyConstraints.None;
             return;
         }
         raycastPos = transform.position;
@@ -104,7 +105,6 @@ public class RotationControlScript : MonoBehaviour
             return;
         }
         rb.freezeRotation = true;
-        rb.angularVelocity = Vector3.zero;
         if (InputHandler.IsScreenTapped())
         {
             transform.Rotate(manualControlledRotation, 0, 0);
@@ -126,6 +126,7 @@ public class RotationControlScript : MonoBehaviour
     }
     public float currentSpeed;
     public float acceleration = 60;
+    public float deacceleration = 30f;
 
     public Vector3 currentTransVal;
     void LimitVehicleVelocity()
@@ -139,8 +140,27 @@ public class RotationControlScript : MonoBehaviour
         if (InputHandler.IsScreenTapped())
         {
             desiredSpeed = -1 * maxSpeed;
+            if (currentSpeed > 0)
+            {
+                currentSpeed = 0;
+            }
+                currentSpeed = Mathf.MoveTowards(currentSpeed, desiredSpeed, acceleration * Time.deltaTime);
         }
-        currentSpeed = Mathf.MoveTowards(currentSpeed, desiredSpeed, acceleration * Time.deltaTime);
+        else
+        {
+            if (Mathf.Abs(transform.forward.z) == 1)
+            {
+                // straight
+                desiredSpeed = 0;
+                currentSpeed = Mathf.MoveTowards(currentSpeed, desiredSpeed, deacceleration * Time.deltaTime);
+            }
+            else
+            {
+                desiredSpeed = transform.forward.y * maxSpeed;
+                currentSpeed = Mathf.MoveTowards(currentSpeed, desiredSpeed, deacceleration * Time.deltaTime);
+            }
+        }
+
         Vector3 velocity = rb.velocity;
         velocity = Vector3.ClampMagnitude(velocity, Mathf.Abs(currentSpeed));
         velocity.y = rb.velocity.y;
@@ -150,9 +170,9 @@ public class RotationControlScript : MonoBehaviour
 
     void MoveVehicle()
     {
-        if (InputHandler.IsScreenTapped() && !GameOverChecker.gameOver)
+        if (InputHandler.IsScreenTapped() && !GameOverChecker.gameOver && groundChecker.groundDetected)
         {
-            Vector3 newVEl = -transform.forward * 60 * Time.fixedDeltaTime;
+            Vector3 newVEl = -transform.forward * 100 * Time.fixedDeltaTime;
             rb.AddForce(newVEl, ForceMode.VelocityChange);
 
         }
